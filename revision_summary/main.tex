@@ -1,63 +1,59 @@
-\documentclass[11pt]{article}
-\usepackage[margin=0.9in]{geometry}
+\documentclass[10pt]{article}
+\usepackage[margin=0.75in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage{booktabs,array,hyperref}
-\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
 \setlength{\emergencystretch}{2em}
-\title{Changes Since Milestone 2 and Remaining Questions}
-\author{\normalsize Rahul Mehta, Ishaan Mohan, Zhengyu Chris Liu\\
-\normalsize Timothy Kim, Chau M Duong\\[0.3em]
-\normalsize ISYE 4031: Group 1}
-\date{October 26, 2026}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
 \begin{document}
-\maketitle
-
-\section{Scope of the revision}
-This document compares the supplied \emph{Milestone 2} report with the expanded paper, \emph{Industry Heterogeneity and Nonlinear Forecasts of Small-Business AI Use}. The present revision also restores all five author names. The numerical analysis is unchanged by that author correction.
-
-The forecasting target remains an industry-by-size group's published AI-use rate three releases, approximately six weeks, ahead. The original report already contained 635 historical forecasts and a prospective check of 71 forecasts for release 202620. The expanded paper consolidates these into an evaluation of 706 forecasts at ten issue dates. It does not add a release beyond the original report's prospective check. For the newly specified methods, that additional date is a retrospective extension test because its outcome was available during development.
-
-\section{Changes in methods and evidence}
-\begin{enumerate}
-\item \textbf{Industry heterogeneity.} Separate industry regressions and a penalized partial-pooling model are compared with the pooled baseline. Industry growth rates are estimated with group intercepts. Conditional block-bootstrap intervals, rank ranges, pairwise growth differences, and sensitivity to survey standard errors and the sample change accompany the rankings.
-\item \textbf{Nonlinear subset selection.} A hierarchical search evaluates 320 admissible combinations of optional predictor blocks. Candidates include squared current use, squared expected use, squared time, quantitative interactions, and industry-dependent slopes. Selection is repeated within temporal training windows, and stability across forecast dates is reported.
-\item \textbf{Additional forecasting methods.} A larger predictor dictionary includes historical rates, recent change, rolling averages, survey uncertainty, aggregate adoption measures, and panel-cycle terms. Ridge, elastic net, gradient boosting, and feature-ablation comparisons assess whether these additions improve forecasts.
-\item \textbf{Overparameterization.} A controlled random-feature experiment varies coefficient count from below to above the number of training rows. Minimum-norm least squares and ridge are compared using matrix rank, effective degrees of freedom, training error, and future error.
-\item \textbf{Release chronology.} Six selected provider announcements are aligned with survey reference periods. Comparisons use a fixed set of 65 fully observed groups and exclude reference windows that straddle an announcement. Unsupported early-event windows are identified explicitly.
-\item \textbf{Evaluation and presentation.} Nested temporal validation separates model selection from outer evaluation. Paired comparisons use origin-level errors and exploratory block-bootstrap intervals. The report now follows a conventional paper structure, with equations, seven figures, nine tables, and reproducible LaTeX sources.
-\end{enumerate}
-
-\section{Changes in conclusions}
-Across all ten issue dates, industry regressions have MAE of 3.04 percentage points (pp), compared with 3.30 for the pooled baseline and 3.39 for the recent six-release mean. This represents a 10.3\% improvement over the recent mean. Elastic net and gradient boosting achieve 3.07 and 3.12 pp, respectively. Unrestricted full regression performs substantially worse, at 5.68 pp.
-
-Nonlinear terms are selected, but the nonlinear subset's aggregate MAE of 3.32 pp does not improve on the baseline. Expected use squared appears at six origins, and a current-by-expected-use interaction appears at four. Current use squared and time squared are never selected. The evidence supports further investigation of heterogeneity more clearly than a general claim that nonlinear terms improve prediction.
-
-Finance, Information, and professional services form the leading estimated growth group. Finance and Information have overlapping growth uncertainty, and their ordering changes under standard-error weighting. Precise league-table rankings are therefore insufficiently supported.
-
-The capacity experiment reaches interpolation and an overparameterized regime. Minimum-norm forecasts become extremely unstable near interpolation, whereas ridge controls their errors. A decline after the interpolation peak does not yield competitive unregularized forecasts. Release-window increases remain descriptive because announcements overlap with the adoption trend.
-
-\section{Data provenance and qualifications}
-The original frozen workbook was absent from the project, and direct Census retrieval timed out. An attributed public redistribution of Census estimates reproduces the original historical counts and reported baseline results. The committed extract ends at release 202620; it is not the latest Census vintage as of October 26. It omits original suppression flags and non-AI survey questions. These limitations are stated in the paper and repository.
-
-The short series, recurring groups, shared shocks, and small number of evaluation dates limit uncertainty assessment. The bootstrap intervals are conditional and exploratory. Forecasts and growth estimates do not identify effects of outreach or individual AI releases.
-
-\section{Remaining research questions}
-\begin{enumerate}
-\item \textbf{Do the gains persist on genuinely future outcomes?} Fix the candidate specifications and evaluation rule before obtaining subsequent releases. Compare industry models and elastic net with the baseline across additional dates and size bands. Address further questionnaire changes before extending the series.
-\item \textbf{Can the source reconstruction be verified directly?} Recover an official workbook and, if possible, the original frozen snapshot. Compare cell values, missingness flags, standard errors, and publication dates. Evaluate non-AI business-condition predictors only after they are available.
-\newpage
-\item \textbf{How stable are industry growth rankings?} Examine alternative trend specifications, common size-band coverage, sample-change adjustments, and block lengths. Determine whether simultaneous uncertainty assessments or a longer series support distinctions within the leading group.
-\item \textbf{What explains the selected expectation terms?} The final subset gives decreasing conditional expectation relationships over the displayed ranges. Assess correlation among predictors, selection stability, and alternatives such as splines before assigning these terms a substantive interpretation.
-\item \textbf{How general is the interpolation result?} Vary feature bandwidth, random-feature construction, penalty strength, and evaluation origins. Determine whether any regularized overparameterized specification offers a reproducible forecasting advantage.
-\item \textbf{Can AI release effects be distinguished from the trend?} Obtain exposure measures or defensible comparison groups. The present common announcement chronology does not supply a counterfactual.
-\item \textbf{What decision should improved forecasts support?} Specify an outreach objective, costs, and an acceptable error level. Adoption growth alone does not establish unmet need or the benefit of assistance.
-\end{enumerate}
-
-\section*{Documents compared}
+\begin{center}
+{\Large\bfseries Changes Since Milestone 2}\\[5pt]
+{\small Rahul Mehta, Ishaan Mohan, Zhengyu Chris Liu, Timothy Kim, Chau M Duong}\\[2pt]
+{\small ISYE 4031: Group 1 \quad October 27, 2026}
+\end{center}
 \begin{itemize}
-\item \emph{Milestone2\_Report\_Group1.pdf}: supplied Milestone 2 report.
-\item \emph{Group1\_AI\_Use\_Report.pdf}: expanded paper; code and saved results are in the project repository.
+\setlength{\itemsep}{5pt}
+\setlength{\parsep}{0pt}
+\item \textbf{Data and evaluation}
+  \begin{itemize}\setlength{\itemsep}{0pt}
+  \item \textbf{Method:} Reconstructed Census data; nested temporal validation; paired block-bootstrap comparisons.
+  \item \textbf{Result:} 706 forecasts at 10 dates (635 historical + 71 already in the original prospective check). No additional release beyond that check; original baseline reproduced.
+  \end{itemize}
+\item \textbf{Industry-specific models}
+  \begin{itemize}\setlength{\itemsep}{0pt}
+  \item \textbf{Method:} Compared separate industry regressions and partial pooling with pooled OLS.
+  \item \textbf{Result:} Industry-model MAE: \textbf{3.04 percentage points}, versus 3.30 for pooled OLS and 3.39 for the recent average; 10.3\% improvement over the average.
+  \end{itemize}
+\item \textbf{Nonlinear subset selection}
+  \begin{itemize}\setlength{\itemsep}{0pt}
+  \item \textbf{Method:} Searched 320 hierarchical predictor-block combinations, including squares and interactions.
+  \item \textbf{Result:} Expected use squared selected at 6/10 dates; current-by-expected use at 4/10. Current use squared and time squared never selected. MAE: \textbf{3.32}; no improvement over baseline.
+  \end{itemize}
+\item \textbf{Advanced models and added predictors}
+  \begin{itemize}\setlength{\itemsep}{0pt}
+  \item \textbf{Method:} Tested ridge, elastic net, and gradient boosting with lags, rolling averages, aggregate rates, interactions, and panel-cycle terms.
+  \item \textbf{Result:} MAE: elastic net \textbf{3.07}, boosting \textbf{3.12}, ridge \textbf{3.13}, full OLS \textbf{5.68}. Removing history worsened ridge to 3.70; cycle terms added little.
+  \end{itemize}
+\item \textbf{Industry growth and ranking uncertainty}
+  \begin{itemize}\setlength{\itemsep}{0pt}
+  \item \textbf{Method:} Estimated industry trends with group intercepts; used block-bootstrap intervals and ranks.
+  \item \textbf{Result:} Leading growth: finance 1.28, Information 1.22, professional services 1.08 percentage points per four weeks. Finance and Information cannot be confidently ordered.
+  \end{itemize}
+\item \textbf{Overparameterization}
+  \begin{itemize}\setlength{\itemsep}{0pt}
+  \item \textbf{Method:} Varied random-feature counts above and below training-row counts; compared minimum-norm least squares with ridge.
+  \item \textbf{Result:} Minimum-norm fits interpolate training data but produce extreme future errors. Ridge stabilizes the larger representations; unregularized overparameterization is not competitive.
+  \end{itemize}
+\item \textbf{AI release timing}
+  \begin{itemize}\setlength{\itemsep}{0pt}
+  \item \textbf{Method:} Aligned six announcements with survey reference periods using 65 fully observed groups.
+  \item \textbf{Result:} Three events have sufficient history; pre/post increases range from 0.45 to 1.61 percentage points. Overlapping events and trends prevent causal attribution.
+  \end{itemize}
+\item \textbf{Remaining questions}
+  \begin{itemize}\setlength{\itemsep}{0pt}
+  \item Do gains persist on future releases? Can official workbooks verify the extract and add predictors?
+  \item Are rankings and nonlinear expectation terms stable? Does interpolation behavior survive other feature choices?
+  \item What evidence could identify release effects, and what outreach decision should forecasts support?
+  \end{itemize}
 \end{itemize}
-
 \end{document}
