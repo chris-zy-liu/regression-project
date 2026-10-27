@@ -2,3 +2,7 @@ matplotlib
 numpy
 pandas
 openpyxl
+scipy
+scikit-learn
+threadpoolctl
+requests

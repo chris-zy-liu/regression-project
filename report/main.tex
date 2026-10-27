@@ -1,0 +1,131 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,graphicx,booktabs,hyperref,array,float}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\graphicspath{{figures/}}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\topfraction}{.95}
+\renewcommand{\bottomfraction}{.9}
+\renewcommand{\textfraction}{.05}
+\renewcommand{\floatpagefraction}{.8}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{5}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+\input{generated/numbers.tex}
+\title{Industry Heterogeneity and Nonlinear Forecasts of Small-Business AI Use}
+\author{ISYE 4031: Group 1}
+\date{October 26, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We examine industry differences in small-business artificial intelligence (AI) use and evaluate forecasts of published adoption rates three Census releases ahead. A reconstruction of the Business Trends and Outlook Survey reproduces the original Milestone 2 baseline. The extended analysis compares industry models, partial pooling, hierarchical subset selection with nonlinear terms, regularized regression, and gradient boosting under nested temporal validation. The evaluation comprises \ForecastN{} forecasts at \OriginN{} issue dates. \AbstractResult{}
+Industry growth estimates are accompanied by uncertainty intervals and rank distributions. A controlled random-feature experiment evaluates prediction beyond the interpolation threshold. Selected AI release announcements are aligned with survey reference periods. The short observation window, informative missingness, and absence of an untreated comparison group restrict the interpretation of rankings and release-related changes.
+\end{abstract}
+
+\section{Introduction}
+Small-business support organizations may use forecasts of AI adoption to anticipate demand for information, training, and implementation assistance. Such forecasts require evidence that improvements persist across industries, business sizes, and forecast dates. Differences in observed adoption also require uncertainty assessment: industries with similar estimated growth rates may have substantially overlapping rank distributions.
+
+This study addresses three questions. First, do industry-specific relationships improve forecasts beyond a pooled linear baseline? Second, do quadratic terms and interactions provide predictive information after temporal validation? Third, how does forecast error change as the number of coefficients approaches and exceeds the number of training rows? We also examine the temporal correspondence between selected AI model releases and survey outcomes. The response is an industry-by-employment-size group's published AI-use percentage, rather than a firm-level adoption indicator or a measure of outreach effectiveness.
+
+\section{Data and study population}
+\subsection{Source and reconstruction}
+The Census Business Trends and Outlook Survey (BTOS) publishes estimates for employer businesses. We restrict attention to five employment-size categories: 1--4, 5--9, 10--19, 20--49, and 50--99 employees. The comparable series begins with collection on November 17, 2025, when the AI question was broadened to cover any business function. Earlier observations are excluded because the wording change introduced a discontinuity \cite{wording}.
+
+The original workbook was absent from the supplied project, and the Census download host returned timeouts during acquisition. The analysis therefore uses the unmodified, attributed CSV redistribution by The Uptime Report, which records a Census workbook extraction on October 15, 2026 \cite{extract}. The data include estimates, standard errors, collection dates, and national, industry, and size aggregates through release 202620. The file hash and acquisition record are supplied in the repository. This source reproduces the original report's historical cell counts and forecasting results; byte identity with the missing workbook cannot be established. Other business-condition survey questions are unavailable in the extract and do not enter the reported fits.
+
+The original historical window contains 22 releases through 202619: 2,200 potential cells and 498 unavailable current-use estimates. The reconstructed analysis adds release 202620, giving \CellN{} potential cells across \ReleaseN{} releases. Missing rows in the extract are treated as unavailable values. Their individual original suppression flags cannot be recovered. BTOS withholds estimates for quality or disclosure concerns, including relative standard errors above 50\% \cite{censusmethods}. Missing current-use rates and forecast outcomes are never imputed.
+
+\subsection{Screening and temporal alignment}
+A group is retained when both current and expected AI use are published in at least seven of the first eight releases. Multi-sector category XX is excluded. The rule retains \GroupN{} groups in \IndustryN{} industries and is applied before the first evaluation date. The resulting population consists of relatively well-measured industry-size groups. It does not represent all small businesses, and group-level averages are not business-population-weighted averages.
+
+Let $y_{g,t}$ denote the current-use percentage for group $g$ at release $t$, and let $e_{g,t}$ denote expected use over the next six months. We predict $y_{g,t+3}$ at the publication of release $t$. Three releases correspond to approximately six weeks. Reference periods, collection periods, and publication dates are distinct. For the included extract, publication is reconstructed as the Thursday following collection; this schedule reproduces the original report's forecast dates. Event analyses use the previous fortnight's reference period, with its end one day before collection begins. The calendar is exported for inspection.
+
+There are \PairN{} complete issue--target pairs in the extended sample. Historical evaluation covers the original nine issue dates; the extension contains one additional issue date. All expanded specifications were developed after the extension outcome was publicly available. Consequently, the extension is a retrospective temporal test of these specifications, rather than a newly conducted prospective experiment.
+
+\section{Statistical methods}
+\subsection{Forecast models}
+The original baseline is pooled ordinary least squares (OLS):
+\begin{equation}
+ y_{g,t+3}=\beta_0+\beta_y y_{g,t}+\alpha_{s(g)}+\delta_{b(g)}+\beta_t t+\varepsilon_{g,t+3},
+\end{equation}
+where $s(g)$ and $b(g)$ identify industry and size. Benchmarks carry forward the latest rate or average the latest six available releases. Separate industry regressions allow each industry's coefficients to differ. A partial-pooling estimator retains unpenalized global intercept, current-use, and time coefficients, while ridge penalties shrink industry and size intercept deviations and industry trend deviations. This estimator is a penalized regression; it is not a fitted random-effects likelihood.
+
+The full feature dictionary includes current and expected use, linear time, squared current use, squared expected use, squared time, current-use-by-time and current-by-expected-use products, industry-specific current-use slopes and trends, size-specific trends, lags of 1, 2, 3, and 6 releases, a six-release average, recent change, the expectation gap, the current estimate's standard error, and available national, industry, and size AI-use and expectation aggregates. It also includes a known sample-year indicator and sine/cosine terms with period six releases. The latter investigate the rotating-panel cycle; the available history cannot establish annual seasonality. Supplementary missing predictors are median-imputed using training rows only, with missingness indicators. Numerical features are standardized within each training fold.
+
+We compare full OLS, ridge regression, elastic net, and histogram gradient boosting. Ridge penalties are selected from $\{0.1,1,10,100,1000,10000,100000\}$. Elastic net uses a mixing fraction of $0.5$ and penalties $\{0.01,0.1,0.5,1\}$. Boosting uses 150 iterations, learning rate $0.05$, at least 25 observations per leaf, an $L_2$ penalty of 10, and maximum leaf counts $\{3,7,15\}$. These finite dictionaries constrain the search in a short panel.
+
+\subsection{Hierarchical subset selection and nonlinearity}
+Subset selection retains the baseline's main effects and exhaustively searches optional blocks. A linear comparison permits expected use and industry- or size-specific slopes and trends. The nonlinear search additionally permits $y^2$, $e^2$, $t^2$, $yt$, and $ye$. Industry indicators and their interactions enter as blocks. Strong hierarchy requires the expected-use main effect whenever $e^2$ or $ye$ is selected; the remaining parent effects are already mandatory. Each of the \SubsetCandidates{} admissible nonlinear candidates is fitted by least squares. Selection minimizes average validation-origin MAE; exact ties favor fewer columns. This is best subset selection over a specified block dictionary, rather than exhaustive selection over every derived predictor \cite{subset}.
+
+A quadratic term or interaction remains linear in its fitted coefficient while allowing nonlinear or industry-dependent response relationships. Its selection is evidence of predictive utility within the candidate dictionary. Selection frequencies across outer origins measure stability. Conventional coefficient tests performed after searching would omit selection uncertainty, so we do not interpret selected-term $p$-values as confirmatory evidence.
+
+\subsection{Nested temporal evaluation}
+At an outer issue date $d_t$, the training sample satisfies
+\begin{equation}
+ \mathcal{T}_t=\{(g,u):\operatorname{publication}(u+3)\le d_t\}.
+\end{equation}
+The outer test consists of complete pairs issued at $t$. Within $\mathcal{T}_t$, up to four earlier validation origins span the available history. Each inner fit again excludes targets unpublished at its own issue date. Subset choice, regularization, and boosting complexity use only these inner predictions. Screening, preprocessing, and selection therefore do not use outer outcomes. Historical data vintages cannot be reconstructed from the redistributed file, so this is temporal validation of the recorded vintage rather than a complete real-time vintage experiment.
+
+Forecast accuracy is evaluated by mean absolute error (MAE), root mean squared error (RMSE), and bias, all in percentage points (pp), with industry and size breakdowns. Predictions are not clipped to $[0,100]$; the frequency of violations is recorded. Paired differences in origin-level MAE are summarized with 2,000 circular moving-block bootstrap draws of length three origins. These intervals address dependence across nearby forecasts approximately. With only \OriginN{} origins they remain exploratory. Exact sign-flip calculations are supplied as a sensitivity calculation under an exchangeability assumption; they are not relied upon for inference under serial dependence. Comparisons across several models introduce additional selection uncertainty.
+
+Survey standard errors quantify uncertainty in the published target. We report their relationship to forecast errors without treating them as a strict lower bound on MAE. Sampling error, temporal dependence, model error, and uncertainty about the underlying adoption rate are distinct quantities.
+
+\subsection{Industry growth and ranking uncertainty}
+For descriptive industry growth, we fit
+\begin{equation}
+ y_{g,t}=a_g+\gamma_{s(g)}(t/2)+u_{g,t},
+\end{equation}
+with group intercepts $a_g$. The coefficient $\gamma_s$ is the change in percentage points per four weeks, using two releases per four weeks. Equal observation weights define the primary estimand; retained size bands need not be identical across industries.
+
+Uncertainty is estimated with 2,000 wild residual bootstrap draws. Six-release blocks share multipliers across all groups, and block boundaries have random offsets. This retains common release shocks and approximates within-cycle dependence. We report percentile intervals, median ranks, rank ranges, and the proportion of bootstrap draws placing an industry in the top three. These proportions describe resampling stability, not posterior probabilities. The small number of temporal blocks and residual-model assumptions restrict precision. Pairwise difference intervals are exploratory and are not simultaneous confidence intervals. Sensitivity fits add a common indicator at release 202616, when the annual sample changes, or weight observations inversely by the squared published standard error with a 1-pp standard-error floor.
+
+\subsection{Model-release timing}
+Six provider announcements form a selected chronology: Gemini 3, Claude Opus 4.5, GPT-5.2, Claude Opus 4.6, Gemini 3.1 Pro, and GPT-5.4 \cite{gemini3,opus45,gpt52,opus46,gemini31,gpt54}. For each event, we compare three complete reference fortnights before the announcement with three wholly subsequent fortnights, excluding a straddling window. Events without three pre- and post-event observations are marked unsupported. A constant set of groups with observed rates at every release prevents changing suppression patterns from mechanically shifting the aggregate.
+
+We also regress the balanced-group mean on time, a sample-change indicator, and the cumulative number of selected announcements. Releases overlap in time and exposure is common to all industries. The resulting coefficient is descriptive: adoption trends, survey changes, and other contemporaneous events supply alternative explanations. The design does not identify an announcement's causal effect.
+
+\subsection{Overparameterization experiment}
+To vary parameter count while holding input information fixed, we transform standardized baseline and expected-use inputs into nested random Fourier features,
+\begin{equation}
+ z_j(x)=\sqrt{2/m}\cos(\omega_j^{\mathsf T}x+b_j),\quad
+ \omega_j\sim N(0,I/d),\quad b_j\sim U(0,2\pi),
+\end{equation}
+where $d$ is input dimension. Feature centering uses training rows. Three seeds and the first, middle, and final outer origins are evaluated at coefficient-to-row ratios near $0.05$, $0.2$, $0.5$, $0.8$, $1$, $1.2$, and $2$. All widths use the same initial feature sequence within a seed. The intercept is included in coefficient counts and matrix rank.
+
+For each width we fit minimum-norm least squares and ridge regression with fixed penalty $0.01$. The ridge objective uses the unnormalized residual sum of squares, and the penalty is fixed as a diagnostic rather than tuned on test outcomes. We record rank, effective degrees of freedom, condition number, and training and future errors. Numerical interpolation is assessed directly. Increasing $p$ beyond $n$ does not by itself establish interpolation when the matrix is rank deficient. A fall in future error after a peak near interpolation would be consistent with double descent \cite{belkin}; its occurrence is evaluated empirically for this feature family.
+
+\input{results.tex}
+
+\section{Discussion}
+\input{discussion.tex}
+
+\section{Conclusion}
+\ConclusionResult{}
+The practical value of a forecast depends on stable performance across issue dates and relevant business groups. Ranking uncertainty should accompany industry comparisons. Release timing provides hypotheses for further investigation, while credible causal attribution would require additional exposure information or an appropriate comparison design.
+
+\section*{Acknowledgments}
+AI assistance was used to develop the analysis code and revise the manuscript. The original Milestone 2 report and scripts are preserved in the repository.
+
+\begin{thebibliography}{99}
+\small\raggedright
+\bibitem{censusmethods} U.S. Census Bureau. \emph{Business Trends and Outlook Survey Methodology}, Version 5, October 2026. \url{https://www2.census.gov/data/experimental-data-products/business-trends-and-outlook-survey/methodology.pdf}.
+\bibitem{wording} U.S. Census Bureau. \emph{BTOS AI Core Question Updates}, December 3, 2025. \url{https://www.census.gov/hfp/btos/downloads/AI%20Question%20Wording%20Updates.pdf}.
+\bibitem{extract} The Uptime Report. \emph{Small Business AI Adoption: Census BTOS Data}, October 2026. Census estimates redistributed under CC BY 4.0; workbook extraction dated October 15, 2026. \url{https://theuptimereport.com/small-business-ai-adoption/}.
+\bibitem{subset} Stanford University. \emph{STATS 202: Stepwise Selection Methods}. \url{https://web.stanford.edu/class/stats202/notes/Model-selection/Stepwise.html}.
+\bibitem{belkin} Belkin, M., Hsu, D., Ma, S., and Mandal, S. (2019). Reconciling modern machine-learning practice and the classical bias--variance trade-off. \emph{Proceedings of the National Academy of Sciences}, 116, 15849--15854. \url{https://doi.org/10.1073/pnas.1903070116}.
+\bibitem{gemini3} Google. \emph{Gemini 3 Brings Upgraded Smarts and New Capabilities to the Gemini App}, November 18, 2025. \url{https://blog.google/products-and-platforms/products/gemini/gemini-3-gemini-app/}.
+\bibitem{opus45} Anthropic. \emph{Introducing Claude Opus 4.5}, November 24, 2025. \url{https://www.anthropic.com/news/claude-opus-4-5}.
+\bibitem{gpt52} OpenAI. \emph{Introducing GPT-5.2}, December 11, 2025. \url{https://openai.com/index/introducing-gpt-5-2/}.
+\bibitem{opus46} Anthropic. \emph{Introducing Claude Opus 4.6}, February 5, 2026. \url{https://www.anthropic.com/news/claude-opus-4-6}.
+\bibitem{gemini31} Google DeepMind. \emph{Gemini 3.1 Pro Model Card}, February 19, 2026. \url{https://deepmind.google/models/model-cards/gemini-3-1-pro}.
+\bibitem{gpt54} OpenAI. \emph{Introducing GPT-5.4}, March 5, 2026. \url{https://openai.com/index/introducing-gpt-5-4/}.
+\end{thebibliography}
+\clearpage
+\appendix
+\section{Additional results and reproducibility}
+\input{generated/appendix.tex}
+\end{document}

@@ -1,0 +1,10 @@
+{
+  "source_hash_verified": true,
+  "forecast_count": 706,
+  "model_count": 11,
+  "origin_count": 10,
+  "empirical_metrics_verified": true,
+  "validation_boundaries_verified": true,
+  "interpolation_verified": true,
+  "figures_verified": 7
+}

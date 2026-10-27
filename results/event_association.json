@@ -1,0 +1,7 @@
+{
+  "balanced_groups": 65,
+  "event_coefficient_pp": -0.4731190160081406,
+  "design_rank": 4,
+  "correlation_exposure_time": 0.8136357430527517,
+  "interpretation": "Descriptive association; selected overlapping events, no untreated counterfactual."
+}

@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\small
+\caption{Median errors over three origins and three feature seeds. MN denotes minimum-norm least squares; degrees of freedom (df) are for ridge. Each origin has its own training-row count; medians are descriptive summaries.}\label{tab:complexity}
+\begin{tabular}{lrrrrr}
+\toprule
+$p/n$ & MN train RMSE & MN test RMSE & Ridge train & Ridge test & Ridge df \\
+\midrule
+0.05 & 4.9 & 6.16 & 4.86 & 6.15 & 45.8 \\
+0.20 & 3.5 & 5.63 & 3.62 & 4.91 & 141.1 \\
+0.50 & 2.7 & 13.46 & 3.37 & 4.84 & 184.4 \\
+0.80 & 1.4 & 45.97 & 3.33 & 4.84 & 196.2 \\
+1.00 & 7.6e-09 & 4576.79 & 3.31 & 4.77 & 199.7 \\
+1.20 & 5.5e-11 & 189.86 & 3.29 & 4.80 & 202.8 \\
+2.00 & 1.3e-11 & 202.99 & 3.27 & 4.89 & 209.7 \\
+\bottomrule
+\end{tabular}
+\end{table}

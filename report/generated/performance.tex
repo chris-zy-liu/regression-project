@@ -1,0 +1,22 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Forecast errors in percentage points. Historical: 635 forecasts at nine origins; extension: 71 forecasts at one origin; all: 706 forecasts.}\label{tab:performance}
+\begin{tabular}{lrrrrr}
+\toprule
+Model & Historical MAE & Extension MAE & All MAE & All RMSE & All bias \\
+\midrule
+Persistence & 4.18 & 3.90 & 4.15 & 5.75 & -1.05 \\
+Six-release mean & 3.40 & 3.34 & 3.39 & 4.64 & -2.07 \\
+Baseline OLS & 3.33 & 3.09 & 3.30 & 4.55 & +0.07 \\
+Linear subset & 3.39 & 3.06 & 3.36 & 4.63 & +0.03 \\
+Nonlinear subset & 3.36 & 2.97 & 3.32 & 4.66 & +0.12 \\
+Full OLS & 5.92 & 3.52 & 5.68 & 7.27 & +2.11 \\
+Ridge & 3.15 & 2.99 & 3.13 & 4.32 & +0.47 \\
+Elastic net & 3.08 & 2.93 & 3.07 & 4.29 & +0.06 \\
+Gradient boosting & 3.12 & 3.09 & 3.12 & 4.38 & -0.03 \\
+Partial pooling & 3.33 & 2.97 & 3.29 & 4.51 & +0.12 \\
+Industry models & 3.04 & 3.02 & 3.04 & 4.29 & -0.21 \\
+\bottomrule
+\end{tabular}
+\end{table}

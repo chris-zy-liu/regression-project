@@ -1,0 +1,8 @@
+{
+  "best_model": "industry_models",
+  "best_mae": 3.0394309940212643,
+  "baseline_mae": 3.302621774454221,
+  "recent_mean_mae": 3.389801699716714,
+  "relative_improvement_percent": 10.336023659576622,
+  "nonlinear_subset_mae": 3.3244175345625417
+}
