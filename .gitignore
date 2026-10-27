@@ -9,3 +9,9 @@ report/*.out
 report/*.toc
 report/*.synctex.gz
 report/main.pdf
+revision_summary/*.aux
+revision_summary/*.log
+revision_summary/*.out
+revision_summary/*.toc
+revision_summary/*.synctex.gz
+revision_summary/main.pdf

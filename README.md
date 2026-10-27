@@ -6,6 +6,8 @@ ISYE 4031, Group 1. Census Business Trends and Outlook Survey (BTOS), employers 
 
 The revised paper is [`output/pdf/Group1_AI_Use_Report.pdf`](output/pdf/Group1_AI_Use_Report.pdf). Its self-contained LaTeX project is [`report/`](report/), with `main.tex` as the main document. The supplied Milestone 2 PDF and ZIP are preserved unchanged.
 
+[`output/pdf/Group1_Changes_and_Questions.pdf`](output/pdf/Group1_Changes_and_Questions.pdf) summarizes the changes from Milestone 2 and remaining research questions. Its LaTeX source is [`revision_summary/main.tex`](revision_summary/main.tex).
+
 The extended analysis reproduces the original historical baseline and evaluates **706 forecasts across 10 issue dates**, covering **71 screened groups in 15 industries**:
 
 | Model | MAE (percentage points) |
