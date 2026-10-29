@@ -1,0 +1,110 @@
+{
+  "forecasts": 706,
+  "origins": 10,
+  "first_origin": "2026-04-23",
+  "last_origin": "2026-08-27",
+  "median_target_se": 2.83,
+  "median_target_se_by_size": {
+    "A": 1.67,
+    "B": 2.41,
+    "C": 2.78,
+    "D": 3.62,
+    "E": 5.22
+  },
+  "mae_by_size": {
+    "trailing_mean": {
+      "A": 2.53,
+      "B": 3.15,
+      "C": 3.41,
+      "D": 3.56,
+      "E": 4.65
+    },
+    "baseline": {
+      "A": 2.1,
+      "B": 3.32,
+      "C": 2.84,
+      "D": 3.5,
+      "E": 5.32
+    },
+    "industry_models": {
+      "A": 1.92,
+      "B": 3.01,
+      "C": 2.96,
+      "D": 3.41,
+      "E": 4.23
+    }
+  },
+  "cells": 2300,
+  "missing_rates": 519,
+  "groups": 71,
+  "industries": 15,
+  "complete_pairs": 1406,
+  "models": {
+    "persistence": {
+      "mae": 4.153,
+      "rmse": 5.746,
+      "bias": -1.046,
+      "within_2se": 0.782,
+      "mae_202620": 3.899
+    },
+    "trailing_mean": {
+      "mae": 3.39,
+      "rmse": 4.643,
+      "bias": -2.067,
+      "within_2se": 0.86,
+      "mae_202620": 3.342
+    },
+    "baseline": {
+      "mae": 3.303,
+      "rmse": 4.545,
+      "bias": 0.065,
+      "within_2se": 0.843,
+      "mae_202620": 3.095,
+      "delta_vs_mean": -0.087,
+      "ci": [
+        -0.219,
+        0.042
+      ],
+      "wins": 7
+    },
+    "industry_models": {
+      "mae": 3.039,
+      "rmse": 4.292,
+      "bias": -0.21,
+      "within_2se": 0.888,
+      "mae_202620": 3.018,
+      "delta_vs_mean": -0.35,
+      "ci": [
+        -0.461,
+        -0.24
+      ],
+      "wins": 9
+    },
+    "boosting": {
+      "mae": 3.077,
+      "rmse": 4.332,
+      "bias": -0.45,
+      "within_2se": 0.881,
+      "mae_202620": 3.064,
+      "delta_vs_mean": -0.312,
+      "ci": [
+        -0.421,
+        -0.219
+      ],
+      "wins": 10
+    },
+    "full_ols": {
+      "mae": 6.013,
+      "rmse": 8.148,
+      "bias": 3.438,
+      "within_2se": 0.649,
+      "mae_202620": 3.607,
+      "delta_vs_mean": 2.613,
+      "ci": [
+        0.304,
+        5.86
+      ],
+      "wins": 1
+    }
+  }
+}
