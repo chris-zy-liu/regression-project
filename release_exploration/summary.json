@@ -1,0 +1,16 @@
+{
+  "source_sha256": "268297c65f699aff248a9d8d6508e4319852fdc58b670a1c67fdf811d6370c0f",
+  "source": "https://epoch.ai/data/ai-models",
+  "selection": "Epoch catalog rows with Language in Domain, publication date 2024-01 through 2026-09",
+  "models": 1045,
+  "months": 33,
+  "backtest_months": 21,
+  "constant_mae": 12.581863310782886,
+  "trend_mae": 8.606420396850902,
+  "october_2026_trend_expected_count": 18.62180348364984,
+  "october_2026_poisson_95pct_interval": [
+    11,
+    28
+  ],
+  "limitations": "Retrospective catalogue; publication date is not necessarily product release. Selection, reporting delays, revisions, non-independence and overdispersion are untested. Interval excludes parameter and catalogue uncertainty. Not a causal adoption predictor."
+}
