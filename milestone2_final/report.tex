@@ -23,7 +23,7 @@ Rahul Mehta, Ishaan Mohan, Zhengyu Chris Liu, Timothy Kim, Chau M Duong
 \begin{itemize}
 \item \emph{TA, Milestone 1:} define the target and model, use several predictors, fit a baseline, and respect the short history. We state the model (Section 4), use current rate, industry, size, and trend, compare two naive forecasts, and evaluate only in time order.
 \item \emph{October 20 meeting (relayed by Chris):} compare industries and show uncertainty. We added industry growth estimates with intervals (Figure 1) and separate regressions per industry.
-\item \emph{October 27--28 (professor, relayed by Chris):} consider AI model-release timing, benchmark scores, and a nonstationary Poisson process. We ran exploratory versions (Section 5). The exact scope of this request is not yet confirmed.
+\item \emph{October 27--28 (professor, relayed by Chris):} consider AI model-release timing, benchmark scores, and a nonstationary Poisson process. We modeled release arrivals and tested release features in the adoption forecasts (Section 5). The exact scope of this request is not yet confirmed.
 \end{itemize}
 
 \section{2. Data and preparation}
@@ -89,12 +89,12 @@ Separate industry models cut MAE by 0.35 pp (10\%) against the six-release mean 
 
 \textbf{Limitations.} (1) Short history: 10 forecast dates with shared shocks, so intervals are wide and fragile. (2) Model selection after outcomes were known. (3) Survey noise, suppression, and screening: results cover 71 well-measured groups, not all small businesses or nonemployers. (4) One downloaded vintage; we cannot prove earlier values were unrevised at each forecast date. (5) Association only: industry differences and adoption trends are not causal.
 
-\textbf{Exploratory work on AI releases (not used in adoption forecasts).} With Epoch AI's model catalogue (1{,}045 language models, January 2024--September 2026), a log-linear (nonstationary) Poisson rate forecast monthly counts with MAE 8.6 models vs.\ 12.6 for a constant rate over 21 months. For GPQA Diamond best scores, carrying the last value forward beat a six-month trend (MAE 0.55 vs.\ 2.10 points, 7 comparisons). Both analyses are retrospective; catalogue publication dates need not be product releases, and benchmark run dates do not establish when scores became public. Neither series is linked to adoption or shows a causal effect.
+\textbf{AI releases and benchmarks (exploratory).} Using Epoch AI's benchmark-scored catalog (221 models released January 2024--October 2026), a nonstationary Poisson regression with a time trend and weekday effect was selected by held-out log-likelihood. It expects 12.5 catalogued releases from October 31 to December 11, 2026 (90\% simulated range 6--20). Releases arrive in batches more often than the model allows (47 days with two or more releases vs.\ 26 expected), so that range is too narrow. Adding past release counts, benchmark scores, or expected releases to the adoption forecasts did not reduce error on the same 706 forecasts: $+0.13$ pp [$-0.02$, $+0.36$] for ridge and $+0.004$ pp [$-0.02$, $+0.03$] for boosting, each against a matched control. Benchmark scores were calibrated after the fact, so this test is retrospective. We find no evidence that release timing improves six-week adoption forecasts, and none of this is causal.
 
 \textbf{Most important for Milestone 3.} Freeze the industry model now and score it on releases published after this report, before looking at those outcomes.
 
 \section{6. Team contributions and reflection}
-\textbf{Contributions.} All five members contributed equally to the project. Ishaan reviewed the proposal; Timothy prepared and submitted the earlier milestone; Chau coordinated meetings and relayed TA feedback. Chris built the industry and nonlinear forecasting extension; Rahul audited the workbook, ran release and benchmark explorations, and assembled this report.
+\textbf{Contributions.} All five members contributed equally to the project. Ishaan reviewed the proposal; Timothy prepared and submitted the earlier milestone; Chau coordinated meetings and relayed TA feedback. Chris built the industry and nonlinear forecasting extension and the Poisson release model; Rahul audited the workbook, ran early release and benchmark checks, and assembled this report.
 
 \textbf{What we learned.} Aggregate accuracy hid failures: the baseline wins overall but loses in two size bands. Survey uncertainty matters when interpreting errors. Time-ordered evaluation on outcomes not used to choose a model is needed to assess prospective performance.
 
@@ -111,5 +111,5 @@ Calibrate forecast intervals by size band & Ishaan and Timothy\\\bottomrule
 
 \textbf{AI use.} AI tools, including Claude and Codex, helped write and check analysis code, verify results, and organize and edit the report. The team is responsible for every claim.
 
-{\footnotesize\textbf{Sources.} U.S. Census Bureau, Business Trends and Outlook Survey, Sector by Employment Size Class workbook and methodology, census.gov/hfp/btos. Epoch AI, Data on AI Models and Benchmarking data, epoch.ai/data. Reproducible code accompanies this report.\par}
+{\footnotesize\textbf{Sources.} U.S. Census Bureau, Business Trends and Outlook Survey, Sector by Employment Size Class workbook and methodology, census.gov/hfp/btos. Epoch AI, Epoch Capabilities Index scores and benchmarks, retrieved October 30, 2026, epoch.ai/eci (CC BY 4.0). Reproducible code accompanies this report.\par}
 \end{document}
