@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\small
+\caption{Paired origin-level MAE differences. Negative values favor the first specification. Intervals are exploratory 95\% moving-block bootstrap intervals over ten dates.}\label{tab:release-pairs}
+\begin{tabular}{lrrr}
+\toprule
+Comparison & Difference (pp) & Interval (pp) & Origins won \\
+\midrule
+Benchmark ridge vs. Ridge control & +0.052 & [-0.052, +0.179] & 5/10 \\
+NHPP ridge vs. Ridge control & +0.132 & [-0.023, +0.358] & 5/10 \\
+NHPP ridge vs. Benchmark ridge & +0.080 & [-0.011, +0.189] & 5/10 \\
+Interactions vs. NHPP ridge & -0.026 & [-0.074, +0.011] & 7/10 \\
+NHPP boosting vs. Boosting control & +0.004 & [-0.024, +0.033] & 6/10 \\
+\bottomrule
+\end{tabular}
+\end{table}

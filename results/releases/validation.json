@@ -1,0 +1,13 @@
+{
+  "catalog_hashes_verified": true,
+  "strict_release_date_filtering_verified": true,
+  "historical_score_availability_verified": false,
+  "temporal_folds_verified": true,
+  "adoption_metrics_verified": true,
+  "matched_ridge_verified": true,
+  "intensity_integration_verified": true,
+  "simulation_quantiles_verified": true,
+  "models": 7,
+  "adoption_forecasts": 706,
+  "new_figures": 4
+}

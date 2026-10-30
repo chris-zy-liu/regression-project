@@ -1,0 +1,272 @@
+model,Display name,eci,eci_ci_low,eci_ci_high,date,provider,Country (of organization),Model accessibility,Accessibility group,model_versions,gpqa
+LLaMA-13B,LLaMA-13B,100.54,90.71,106.8,2023-02-24,Meta AI,United States of America,Open weights (non-commercial),Open weights,,
+LLaMA-33B,LLaMA-33B,107.31,98.94,111.87,2023-02-24,Meta AI,United States of America,Open weights (non-commercial),Open weights,,
+LLaMA-65B,LLaMA-65B,110.07,101.72,114.49,2023-02-24,Meta AI,United States of America,Open weights (non-commercial),Open weights,,
+LLaMA-7B,LLaMA-7B,96.89,85.6,103.76,2023-02-24,Meta AI,United States of America,Open weights (non-commercial),Open weights,,
+GPT-4 (Mar 2023),GPT-4 (Mar 2023),125.73,120.52,129.59,2023-03-14,OpenAI,United States of America,API access,Closed weights,,14.906004489337821
+Cerebras-GPT-13B,Cerebras-GPT-13B,83.1,67.66,90.91,2023-03-20,Cerebras Systems,United States of America,Open weights (unrestricted),Open weights,,
+Dolly 2.0-12b,Dolly 2.0-12b,89.56,74.62,97.38,2023-04-11,Databricks,United States of America,Open weights (unrestricted),Open weights,,
+vicuna-13b-v1.1,vicuna-13b-v1.1,94.54,81.71,102.44,2023-04-12,Unknown: vicuna-13b-v1.1,,API access,Closed weights,,
+stablelm-tuned-alpha-7b,stablelm-tuned-alpha-7b,55.5,31.17,71.89,2023-04-19,Unknown: stablelm-tuned-alpha-7b,,API access,Closed weights,,
+Falcon-7B,Falcon-7B,94.99,82.12,101.97,2023-04-24,Technology Innovation Institute,United Arab Emirates,Open weights (unrestricted),Open weights,,
+RedPajama-INCITE-7B-Base,RedPajama-INCITE-7B-Base,90.31,75.44,97.87,2023-05-04,Unknown: RedPajama-INCITE-7B-Base,,API access,Closed weights,,
+MPT-7B,MPT-7B,94.48,81.44,101.57,2023-05-05,MosaicML,United States of America,Open weights (unrestricted),Open weights,,
+PaLM 2-L,PaLM 2-L,114.94,106.09,129.24,2023-05-17,Unknown: PaLM 2-L,,API access,Closed weights,,
+PaLM 2-M,PaLM 2-M,108.18,98.99,118.62,2023-05-17,Unknown: PaLM 2-M,,API access,Closed weights,,
+PaLM 2-S,PaLM 2-S,106.06,96.26,114.21,2023-05-17,Unknown: PaLM 2-S,,API access,Closed weights,,
+Falcon-40B,Falcon-40B,104.35,95.52,110.07,2023-05-25,Technology Innovation Institute,United Arab Emirates,Open weights (unrestricted),Open weights,,
+Baichuan1-7B,Baichuan1-7B,90.4,78.74,99.31,2023-06-01,Baichuan,China,Open weights (non-commercial),Open weights,,
+open_llama_7b,open_llama_7b,91.53,77.14,98.75,2023-06-07,Unknown: open_llama_7b,,API access,Closed weights,,
+GPT-3.5 Turbo (Jun 2023),GPT-3.5 Turbo (Jun 2023),113.27,105.41,117.75,2023-06-13,OpenAI,United States of America,API access,Closed weights,,
+GPT-4 (Jun 2023),GPT-4 (Jun 2023),123.04,117.2,126.8,2023-06-13,OpenAI,United States of America,API access,Closed weights,,7.84757295173961
+MPT-30B,MPT-30B,100.56,90.84,106.26,2023-06-22,MosaicML,United States of America,Open weights (unrestricted),Open weights,,
+chatglm2-6b,chatglm2-6b,98.85,81.5,105.5,2023-06-24,Unknown: chatglm2-6b,,API access,Closed weights,,
+XGen-7B,XGen-7B,93.29,81.76,100.61,2023-06-27,Salesforce,United States of America,Open weights (unrestricted),Open weights,,
+internlm-7b,internlm-7b,102.78,91.6,108.88,2023-07-05,Unknown: internlm-7b,,API access,Closed weights,,
+Claude 2,Claude 2,120.13,114.07,123.69,2023-07-11,Anthropic,United States of America,API access,Closed weights,,13.415404040404038
+Llama 2-13B,Llama 2-13B,105.73,96.46,111.08,2023-07-18,Meta AI,United States of America,Open weights (restricted use),Open weights,,
+Llama 2-34B,Llama 2-34B,105.1,95.63,110.3,2023-07-18,Meta AI,United States of America,Unreleased,Closed weights,,
+Llama 2-70B,Llama 2-70B,113.71,106.09,117.65,2023-07-18,Meta AI,United States of America,Open weights (restricted use),Open weights,,1.84132996632995
+Llama 2-7B,Llama 2-7B,98.85,88.17,105.71,2023-07-18,Meta AI,United States of America,Open weights (restricted use),Open weights,,
+Stable Beluga 2,Stable Beluga 2,117.02,109.66,120.31,2023-07-20,Stability AI,United Kingdom,Open weights (non-commercial),Open weights,,
+Claude Instant,Claude Instant,120.16,113.39,123.29,2023-08-09,Anthropic,United States of America,API access,Closed weights,,
+Baichuan2-13B,Baichuan2-13B,103.11,90.44,109.7,2023-09-06,Baichuan,China,Open weights (restricted use),Open weights,,
+Falcon-180B,Falcon-180B,112.02,103.87,118.26,2023-09-06,Technology Innovation Institute,United Arab Emirates,Open weights (restricted use),Open weights,,
+Phi-1.5,Phi-1.5,91.39,70.27,100.98,2023-09-11,Microsoft,United States of America,Open weights (unrestricted),Open weights,,
+internlm-20b,internlm-20b,112.0,103.53,116.64,2023-09-18,Unknown: internlm-20b,,API access,Closed weights,,
+Baichuan 2-7B,Baichuan 2-7B,96.25,85.0,104.74,2023-09-20,Baichuan,China,Open weights (restricted use),Open weights,,
+Qwen-14B,Qwen-14B,112.94,104.63,117.15,2023-09-24,Alibaba,China,Open weights (restricted use),Open weights,,
+Mistral 7B v0.1,Mistral 7B v0.1,112.12,103.88,115.79,2023-09-27,Mistral AI,France,Open weights (unrestricted),Open weights,,
+Qwen-7B,Qwen-7B,106.73,96.72,112.01,2023-09-28,Alibaba,China,Open weights (restricted use),Open weights,,
+Yi-34B,Yi-34B,117.32,109.58,120.38,2023-11-02,01.AI,China,Open weights (restricted use),Open weights,,0.0
+DeepSeek Coder 1.3B,DeepSeek Coder 1.3B,63.13,46.6,77.81,2023-11-02,"DeepSeek,Peking University",China,Open weights (restricted use),Open weights,,
+DeepSeek Coder 33B,DeepSeek Coder 33B,96.24,83.78,102.92,2023-11-02,"DeepSeek,Peking University",China,Open weights (restricted use),Open weights,,
+DeepSeek Coder 6.7B,DeepSeek Coder 6.7B,89.52,74.97,97.29,2023-11-02,"DeepSeek,Peking University",China,Open weights (restricted use),Open weights,,
+GPT-3.5 Turbo (Nov 2023),GPT-3.5 Turbo (Nov 2023),118.51,109.22,121.25,2023-11-06,OpenAI,United States of America,API access,Closed weights,,4.2087542087542
+Claude 2.1,Claude 2.1,119.23,112.84,121.96,2023-11-21,Anthropic,United States of America,API access,Closed weights,,11.04797979797978
+Yi 6B,Yi 6B,104.68,95.22,110.06,2023-11-22,01.AI,China,Open weights (restricted use),Open weights,,
+Qwen-1_8B,Qwen-1_8B,92.85,73.32,101.59,2023-11-30,Unknown: Qwen-1_8B,,API access,Closed weights,,
+Mixtral 8x7B,Mixtral 8x7B,118.41,110.92,120.96,2023-12-11,Mistral AI,France,Open weights (unrestricted),Open weights,,7.759890572390569
+Phi-2,Phi-2,107.88,88.78,113.7,2023-12-12,Microsoft,United States of America,Open weights (unrestricted),Open weights,,
+Gemini 1.0 Pro,Gemini 1.0 Pro,117.06,110.52,119.86,2023-12-13,Google DeepMind,United States of America,API access,Closed weights,,12.45089786756452
+GPT-3.5 Turbo (Jan 2024),GPT-3.5 Turbo (Jan 2024),115.59,108.15,118.93,2024-01-25,OpenAI,United States of America,API access,Closed weights,,3.02504208754208
+GPT-4 Turbo (Nov 2023),GPT-4 Turbo (Nov 2023),126.41,121.57,128.73,2024-01-25,OpenAI,United States of America,API access,Closed weights,,24.11265432098765
+StarCoder 2 15B,StarCoder 2 15B,104.93,93.06,111.66,2024-02-20,"Hugging Face,ServiceNow,Nvidia,BigCode",United States of America,Open weights (restricted use),Open weights,,
+StarCoder 2 7B,StarCoder 2 7B,93.48,77.73,101.4,2024-02-20,"Hugging Face,ServiceNow,Nvidia,BigCode",United States of America,Open weights (restricted use),Open weights,,
+Gemma 2B,Gemma 2B,94.1,82.13,100.67,2024-02-21,Google DeepMind,United States of America,Open weights (restricted use),Open weights,,
+Gemma 7B,Gemma 7B,111.9,104.03,116.47,2024-02-21,Google DeepMind,United States of America,Open weights (restricted use),Open weights,,
+StarCoder 2 3B,StarCoder 2 3B,88.66,73.13,97.64,2024-02-22,"Hugging Face,ServiceNow,Nvidia,BigCode",United States of America,Open weights (restricted use),Open weights,,
+Mistral Large,Mistral Large,122.04,115.65,124.83,2024-02-26,Mistral AI,France,API access,Closed weights,,19.114758698092018
+Nemotron-4 15B,Nemotron-4 15B,107.62,98.6,112.56,2024-02-26,Nvidia,United States of America,Unreleased,Closed weights,,
+Claude 3 Opus,Claude 3 Opus,126.88,122.3,129.47,2024-02-29,Anthropic,United States of America,API access,Closed weights,,30.77651515151515
+Claude 3 Sonnet,Claude 3 Sonnet,120.77,114.35,123.56,2024-02-29,Anthropic,United States of America,API access,Closed weights,,21.657547699214362
+Yi-9B,Yi-9B,107.54,97.66,115.12,2024-03-01,Unknown: Yi-9B,,API access,Closed weights,,
+Claude 3 Haiku,Claude 3 Haiku,118.77,111.69,121.43,2024-03-07,Anthropic,United States of America,API access,Closed weights,,15.69514590347923
+GPT-4 Turbo (Apr 2024),GPT-4 Turbo (Apr 2024),127.25,122.16,128.79,2024-04-09,OpenAI,United States of America,API access,Closed weights,,29.98737373737373
+CodeQwen1.5-7B,CodeQwen1.5-7B,94.77,80.25,102.95,2024-04-15,Unknown: CodeQwen1.5-7B,,API access,Closed weights,,
+Mixtral 8x22B,Mixtral 8x22B,121.98,115.68,124.34,2024-04-17,Mistral AI,France,Open weights (unrestricted),Open weights,,12.58242143658809
+Llama 3-70B,Llama 3-70B,122.97,117.4,126.01,2024-04-18,Meta AI,United States of America,Open weights (restricted use),Open weights,,21.613706509539828
+Llama 3-8B,Llama 3-8B,116.38,108.47,119.28,2024-04-18,Meta AI,United States of America,Open weights (restricted use),Open weights,,1.4906004489337699
+phi-3-medium 14B,phi-3-medium 14B,121.16,114.82,124.2,2024-04-23,Microsoft,United States of America,Open weights (unrestricted),Open weights,,3.5949775533108803
+phi-3-mini 3.8B,phi-3-mini 3.8B,117.3,108.82,120.83,2024-04-23,Microsoft,United States of America,Open weights (unrestricted),Open weights,,
+phi-3-small 7.4B,phi-3-small 7.4B,121.77,114.64,124.67,2024-04-23,Microsoft,United States of America,Open weights (unrestricted),Open weights,,
+"DeepSeek-V2 (MoE-236B, May 2024)","DeepSeek-V2 (MoE-236B, May 2024)",124.71,119.1,127.93,2024-05-07,DeepSeek,China,Open weights (restricted use),Open weights,,
+Falcon 2 11B,Falcon 2 11B,109.45,101.25,114.83,2024-05-09,Technology Innovation Institute,United Arab Emirates,Open weights (restricted use),Open weights,,
+GPT-4o (May 2024),GPT-4o (May 2024),128.99,124.71,131.34,2024-05-13,OpenAI,United States of America,API access,Closed weights,,33.18778058361392
+Gemini 1.5 Pro (May 2024),Gemini 1.5 Pro (May 2024),126.92,122.26,129.0,2024-05-14,Google DeepMind,United States of America,API access,Closed weights,,28.9790263748597
+Gemini 1.5 Flash (May 2024),Gemini 1.5 Flash (May 2024),122.62,116.89,124.66,2024-05-23,Google DeepMind,United States of America,API access,Closed weights,,21.35065937149269
+Mistral 7B v0.3,Mistral 7B v0.3,108.95,98.49,112.68,2024-05-27,Mistral AI,France,Open weights (unrestricted),Open weights,,0.0
+Qwen2-72B,Qwen2-72B,125.25,119.32,126.96,2024-06-07,Alibaba,China,Open weights (unrestricted),Open weights,,21.9205948372615
+DeepSeek-Coder-V2-Lite-Base,DeepSeek-Coder-V2-Lite-Base,108.8,99.02,113.88,2024-06-13,Unknown: DeepSeek-Coder-V2-Lite-Base,,API access,Closed weights,,
+Claude 3.5 Sonnet,Claude 3.5 Sonnet,130.0,,,2024-06-20,Anthropic,United States of America,API access,Closed weights,,40.333894500561165
+Gemma 2 27B,Gemma 2 27B,122.06,115.77,124.11,2024-06-24,Google DeepMind,United States of America,Open weights (restricted use),Open weights,,15.95819304152637
+Gemma 2 9B,Gemma 2 9B,119.74,112.2,122.48,2024-06-24,Google DeepMind,United States of America,Open weights (restricted use),Open weights,,3.4196127946127897
+Mistral NeMo,Mistral NeMo,118.61,111.64,121.56,2024-07-18,Mistral AI,France,Open weights (unrestricted),Open weights,,6.79538439955106
+GPT-4o mini,GPT-4o mini,126.45,120.52,128.63,2024-07-18,OpenAI,United States of America,API access,Closed weights,,17.66799943883276
+Llama 3.1-405B,Llama 3.1-405B,128.75,124.2,130.65,2024-07-23,Meta AI,United States of America,Open weights (restricted use),Open weights,,35.993616722783386
+Llama 3.1-70B,Llama 3.1-70B,125.9,120.84,128.23,2024-07-23,Meta AI,United States of America,Open weights (restricted use),Open weights,,26.655443322109978
+Llama 3.1-8B,Llama 3.1-8B,116.38,106.96,121.61,2024-07-23,Meta AI,United States of America,Open weights (restricted use),Open weights,,2.7181537598204097
+Mistral Large 2 (Jul 2024),Mistral Large 2 (Jul 2024),127.56,123.28,129.38,2024-07-24,Mistral AI,France,Open weights (non-commercial),Open weights,,33.363145342312
+GPT-4o (Aug 2024),GPT-4o (Aug 2024),128.81,124.58,130.92,2024-08-06,OpenAI,United States of America,API access,Closed weights,,33.62619248035914
+Command R+,Command R+,119.05,109.82,124.56,2024-08-30,"Cohere,Cohere Labs (formerly Cohere for AI)",Canada,Open weights (non-commercial),Open weights,,
+o1-mini,o1-mini,135.82,132.48,137.17,2024-09-12,OpenAI,United States of America,API access,Closed weights,,51.90796857463524
+o1-preview,o1-preview,134.59,130.85,138.15,2024-09-12,OpenAI,United States of America,API access,Closed weights,,35.16063411896745
+Qwen2.5-Coder (1.5B),Qwen2.5-Coder (1.5B),102.93,87.29,110.93,2024-09-18,Alibaba,China,Open weights (unrestricted),Open weights,,
+Qwen2.5-Coder (7B),Qwen2.5-Coder (7B),113.07,103.32,119.35,2024-09-18,Alibaba,China,Open weights (unrestricted),Open weights,,
+Qwen2.5-Coder-32B,Qwen2.5-Coder-32B,119.42,111.03,124.92,2024-09-18,Alibaba,China,Open weights (unrestricted),Open weights,,
+Qwen2.5-Coder-0.5B,Qwen2.5-Coder-0.5B,88.04,62.14,99.97,2024-09-18,Unknown: Qwen2.5-Coder-0.5B,,API access,Closed weights,,
+Qwen2.5-Coder-14B,Qwen2.5-Coder-14B,116.33,106.73,122.04,2024-09-18,Unknown: Qwen2.5-Coder-14B,,API access,Closed weights,,
+Qwen2.5-Coder-3B,Qwen2.5-Coder-3B,107.67,93.68,114.89,2024-09-18,Unknown: Qwen2.5-Coder-3B,,API access,Closed weights,,
+Qwen2.5-72B,Qwen2.5-72B,128.95,124.15,130.64,2024-09-19,Alibaba,China,Open weights (unrestricted),Open weights,,33.5385101010101
+Qwen2.5-7B,Qwen2.5-7B,118.46,110.57,121.24,2024-09-19,Alibaba,China,Open weights (unrestricted),Open weights,,14.555274971941632
+Gemini 1.5 Flash (Sep 2024),Gemini 1.5 Flash (Sep 2024),129.31,123.42,131.13,2024-09-24,Google DeepMind,United States of America,API access,Closed weights,,30.995721099887756
+Gemini 1.5 Pro (Sept 2024),Gemini 1.5 Pro (Sept 2024),131.73,127.77,133.08,2024-09-24,Google DeepMind,United States of America,API access,Closed weights,,44.761854657687984
+Llama 3.2 90B,Llama 3.2 90B,125.49,120.25,127.38,2024-09-24,Meta AI,United States of America,Open weights (restricted use),Open weights,,22.27132435465768
+Ministral 3B,Ministral 3B,117.97,106.07,121.56,2024-10-16,Mistral AI,France,API access,Closed weights,,0.35072951739617003
+Claude 3.5 Haiku,Claude 3.5 Haiku,126.97,121.43,129.18,2024-10-22,Anthropic,United States of America,API access,Closed weights,,18.23793490460157
+Claude 3.5 Sonnet (October 2024),Claude 3.5 Sonnet (October 2024),133.4,128.49,137.7,2024-10-22,Anthropic,United States of America,API access,Closed weights,,42.087542087542076
+Mistral Large 2 (Nov 2024),Mistral Large 2 (Nov 2024),128.57,124.29,130.71,2024-11-18,Mistral AI,France,Open weights (non-commercial),Open weights,,36.56355218855219
+GPT-4o (Nov 2024),GPT-4o (Nov 2024),128.74,124.19,131.28,2024-11-20,OpenAI,United States of America,API access,Closed weights,,31.78486251402918
+INTELLECT-1,INTELLECT-1,100.77,90.03,106.43,2024-11-29,"Prime Intellect,Hugging Face,Arcee AI",United States of America,Unknown,Other,,
+Llama 3.3 70B,Llama 3.3 70B,127.31,122.7,129.34,2024-12-06,Meta AI,United States of America,Open weights (restricted use),Open weights,,31.17108585858585
+Phi-4,Phi-4,130.63,125.48,132.21,2024-12-12,Microsoft Research,United States of America,Open weights (unrestricted),Open weights,,43.13973063973063
+Grok-2 (Dec 2024),Grok-2 (Dec 2024),130.59,126.74,132.26,2024-12-12,xAI,United States of America,API access,Closed weights,,39.98316498316498
+o1,o1,141.82,139.87,143.02,2024-12-17,OpenAI,United States of America,API access,Closed weights,,71.89955106621773
+DeepSeek-V3,DeepSeek-V3,132.32,127.53,135.5,2024-12-26,DeepSeek,China,Open weights (restricted use),Open weights,,43.79734848484848
+DeepSeek-R1,DeepSeek-R1,138.83,136.54,140.17,2025-01-20,DeepSeek,China,Open weights (unrestricted),Open weights,,64.88496071829405
+Gemini 2.0 Flash Thinking (Jan 2025),Gemini 2.0 Flash Thinking (Jan 2025),135.29,130.28,138.01,2025-01-21,"Google DeepMind,Google",United States of America,API access,Closed weights,,44.54264870931538
+Qwen2.5-Max,Qwen2.5-Max,132.51,128.94,135.83,2025-01-25,Alibaba,China,API access,Closed weights,,43.22741301907968
+o3-mini,o3-mini,140.33,137.59,141.72,2025-01-31,OpenAI,United States of America,API access,Closed weights,,72.25028058361393
+Gemini 2.0 Pro,Gemini 2.0 Pro,135.0,131.09,136.68,2025-02-05,Google DeepMind,United States of America,Hosted access (no API),Closed weights,,56.46745230078564
+Gemini 2.0 Flash (Feb 2025),Gemini 2.0 Flash (Feb 2025),134.66,131.42,136.46,2025-02-05,"Google DeepMind,Google",United States of America,API access,Closed weights,,54.36307519640854
+Claude 3.7 Sonnet,Claude 3.7 Sonnet,141.03,138.97,142.68,2025-02-24,Anthropic,United States of America,API access,Closed weights,,76.0206228956229
+GPT-4.5,GPT-4.5,136.69,133.91,138.46,2025-02-27,OpenAI,United States of America,API access,Closed weights,,60.676206509539846
+QwQ-32B,QwQ-32B,137.52,133.1,141.28,2025-03-05,Alibaba,China,Open weights (unrestricted),Open weights,,56.02904040404041
+Gemma 3 12B,Gemma 3 12B,123.5,116.88,128.38,2025-03-12,Google DeepMind,United States of America,Open weights (restricted use),Open weights,,20.079264870931528
+Gemma 3 27B,Gemma 3 27B,129.89,124.16,132.05,2025-03-12,Google DeepMind,United States of America,Open weights (restricted use),Open weights,,31.565656565656568
+Gemma 3 4B,Gemma 3 4B,115.8,97.87,123.78,2025-03-12,Google DeepMind,United States of America,Open weights (restricted use),Open weights,,0.0
+Mistral Small 3.1,Mistral Small 3.1,127.52,122.74,129.15,2025-03-17,Mistral AI,France,Open weights (unrestricted),Open weights,,31.21492704826037
+DeepSeek-V3 (Mar 2025),DeepSeek-V3 (Mar 2025),135.88,132.45,137.72,2025-03-24,DeepSeek,China,Open weights (restricted use),Open weights,,59.18560606060607
+Gemini 2.5 Pro (Mar 2025),Gemini 2.5 Pro (Mar 2025),144.03,141.93,146.84,2025-03-31,Google DeepMind,United States of America,API access,Closed weights,,81.71997755331088
+Llama 4 Scout,Llama 4 Scout,129.64,125.23,131.22,2025-04-05,Meta AI,United States of America,Open weights (restricted use),Open weights,,37.26501122334455
+Llama 4 Maverick,Llama 4 Maverick,132.34,128.55,134.2,2025-04-06,Meta AI,United States of America,Open weights (restricted use),Open weights,,58.30878226711561
+Grok 3,Grok 3,138.26,135.71,139.74,2025-04-09,xAI,United States of America,API access,Closed weights,,70.496632996633
+GPT-4.1,GPT-4.1,136.73,133.95,138.48,2025-04-14,OpenAI,United States of America,API access,Closed weights,,58.221099887766556
+GPT-4.1 mini,GPT-4.1 mini,134.92,131.14,136.4,2025-04-14,OpenAI,United States of America,API access,Closed weights,,56.73049943883277
+GPT-4.1 nano,GPT-4.1 nano,129.55,124.49,131.79,2025-04-14,OpenAI,United States of America,API access,Closed weights,,33.23162177328843
+o3,o3,146.86,145.0,148.83,2025-04-16,OpenAI,United States of America,API access,Closed weights,,78.91414141414143
+o4-mini,o4-mini,145.58,143.19,147.26,2025-04-16,OpenAI,United States of America,API access,Closed weights,,75.8452581369248
+Gemini 2.5 Flash (Apr 2025),Gemini 2.5 Flash (Apr 2025),139.9,135.83,141.98,2025-04-17,Google DeepMind,United States of America,API access,Closed weights,,
+Qwen3-235B-A22B,Qwen3-235B-A22B,139.14,135.25,140.59,2025-04-28,Alibaba,China,Open weights (unrestricted),Open weights,,63.48204264870931
+Qwen3-8B,Qwen3-8B,136.11,130.06,138.3,2025-04-28,Alibaba,China,Open weights (unrestricted),Open weights,,44.10423681257015
+Qwen3-14B,Qwen3-14B,138.2,133.61,139.98,2025-04-29,Alibaba,China,Open weights (unrestricted),Open weights,,53.83698092031426
+Qwen3-30B-A3B,Qwen3-30B-A3B,136.15,130.78,138.54,2025-04-29,Alibaba,China,Open weights (unrestricted),Open weights,,50.943462401795735
+Qwen3-32B,Qwen3-32B,138.48,135.01,140.24,2025-04-29,Alibaba,China,Open weights (unrestricted),Open weights,,56.555134680134685
+Gemini 2.5 Pro (May 2025),Gemini 2.5 Pro (May 2025),142.19,138.16,144.81,2025-05-06,Google DeepMind,United States of America,API access,Closed weights,,57.870370370370374
+Mistral Medium 3,Mistral Medium 3,134.01,130.43,135.38,2025-05-07,Mistral AI,France,API access,Closed weights,,47.962261503928175
+Gemini 2.5 Flash (May 2025),Gemini 2.5 Flash (May 2025),141.48,139.32,142.88,2025-05-20,Google DeepMind,United States of America,API access,Closed weights,,
+Claude Opus 4,Claude Opus 4,142.42,140.21,144.06,2025-05-22,Anthropic,United States of America,API access,Closed weights,,71.19809203142538
+Claude Sonnet 4,Claude Sonnet 4,141.58,138.8,142.87,2025-05-22,Anthropic,United States of America,API access,Closed weights,,75.26085730400453
+DeepSeek-R1 (May 2025),DeepSeek-R1 (May 2025),141.17,138.97,142.85,2025-05-28,DeepSeek,China,Open weights (unrestricted),Open weights,,71.28577441077442
+Gemini 2.5 Pro (Jun 2025),Gemini 2.5 Pro (Jun 2025),145.28,143.58,146.85,2025-06-05,Google DeepMind,United States of America,API access,Closed weights,,83.73667227833896
+Magistral Small 1.0,Magistral Small 1.0,133.09,129.42,134.37,2025-06-10,Mistral AI,France,Open weights (unrestricted),Open weights,,43.13973063973063
+o3-pro,o3-pro,147.41,145.82,150.16,2025-06-10,OpenAI,United States of America,API access,Closed weights,,
+Gemini 2.5 Flash (Jun 2025),Gemini 2.5 Flash (Jun 2025),140.64,138.43,142.09,2025-06-17,Google DeepMind,United States of America,API access,Closed weights,,
+Gemini 2.5 Flash-Lite (Jun 2025),Gemini 2.5 Flash-Lite (Jun 2025),133.84,130.07,136.08,2025-06-17,Google DeepMind,United States of America,API access,Closed weights,,
+Grok-3 mini,Grok-3 mini,140.28,137.77,141.86,2025-06-24,xAI,United States of America,API access,Closed weights,,71.19809203142538
+Grok 4,Grok 4,146.33,144.36,148.0,2025-07-09,xAI,United States of America,API access,Closed weights,,86.11111111111111
+Kimi K2 (Jul 2025),Kimi K2 (Jul 2025),139.91,136.3,141.59,2025-07-12,Moonshot,China,Open weights (restricted use),Open weights,,
+Qwen3-235B-A22B-Instruct (Jul 2025),Qwen3-235B-A22B-Instruct (Jul 2025),138.83,135.53,140.85,2025-07-25,Alibaba,China,Open weights (unrestricted),Open weights,,
+Qwen3-235B-A22B-Thinking (Jul 2025),Qwen3-235B-A22B-Thinking (Jul 2025),143.78,141.89,145.22,2025-07-25,Alibaba,China,Open weights (unrestricted),Open weights,,76.45903479236813
+Qwen3-30B-A3B-Instruct (Jul 2025),Qwen3-30B-A3B-Instruct (Jul 2025),137.32,131.74,139.39,2025-07-29,Alibaba,China,Open weights (unrestricted),Open weights,,42.52595398428732
+Qwen3-30B-A3B-Thinking (Jul 2025),Qwen3-30B-A3B-Thinking (Jul 2025),139.6,135.68,141.18,2025-07-30,Alibaba,China,Open weights (unrestricted),Open weights,,62.60521885521886
+Claude Opus 4.1,Claude Opus 4.1,143.93,141.5,146.07,2025-08-05,Anthropic,United States of America,API access,Closed weights,,72.6010101010101
+gpt-oss-120b,gpt-oss-120b,139.83,135.6,142.19,2025-08-05,OpenAI,United States of America,Open weights (unrestricted),Open weights,,70.496632996633
+gpt-oss-20b,gpt-oss-20b,137.75,133.08,139.68,2025-08-05,OpenAI,United States of America,Open weights (unrestricted),Open weights,,49.715909090909086
+GPT-5,GPT-5,150.0,,,2025-08-07,OpenAI,United States of America,API access,Closed weights,,84.96422558922558
+GPT-5 mini,GPT-5 mini,145.42,143.52,147.08,2025-08-07,OpenAI,United States of America,API access,Closed weights,,69.44444444444444
+GPT-5 nano,GPT-5 nano,139.25,134.34,141.45,2025-08-07,OpenAI,United States of America,API access,Closed weights,,61.72839506172839
+DeepSeek-V3.1,DeepSeek-V3.1,139.83,135.63,143.2,2025-08-21,DeepSeek,China,Open weights (unrestricted),Open weights,,
+Grok 4 Fast,Grok 4 Fast,144.15,141.73,146.46,2025-09-19,xAI,United States of America,API access,Closed weights,,
+Qwen3-Max,Qwen3-Max,142.37,140.14,144.81,2025-09-24,Alibaba,China,API access,Closed weights,,66.11251402918069
+Gemini 2.5 Flash (Sep 2025),Gemini 2.5 Flash (Sep 2025),142.94,139.25,146.31,2025-09-25,Google DeepMind,United States of America,API access,Closed weights,,
+Claude Sonnet 4.5,Claude Sonnet 4.5,146.8,144.75,148.67,2025-09-29,Anthropic,United States of America,API access,Closed weights,,79.61560044893378
+DeepSeek-V3.2-Exp,DeepSeek-V3.2-Exp,144.98,142.5,147.07,2025-09-29,DeepSeek,China,Open weights (unrestricted),Open weights,,
+GPT-5 Pro,GPT-5 Pro,150.74,148.89,154.57,2025-10-07,OpenAI,United States of America,API access,Closed weights,,
+Claude Haiku 4.5,Claude Haiku 4.5,142.21,139.37,143.85,2025-10-15,Anthropic,United States of America,API access,Closed weights,,64.18350168350169
+Kimi K2 Thinking,Kimi K2 Thinking,145.87,143.3,147.42,2025-11-06,Moonshot,China,Open weights (restricted use),Open weights,,82.24607182940515
+GPT-5.1,GPT-5.1,149.89,148.53,151.57,2025-11-13,OpenAI,United States of America,API access,Closed weights,,86.98092031425365
+Gemini 3 Pro,Gemini 3 Pro,153.22,151.08,155.57,2025-11-18,Google DeepMind,United States of America,API access,Closed weights,,93.90782828282828
+Claude Opus 4.5,Claude Opus 4.5,150.2,148.04,153.23,2025-11-24,Anthropic,United States of America,API access,Closed weights,,84.7888608305275
+DeepSeek-V3.2,DeepSeek-V3.2,146.14,144.36,147.46,2025-12-01,DeepSeek,China,Open weights (unrestricted),Open weights,,81.14377906044574
+GPT-5.2,GPT-5.2,153.83,152.19,155.93,2025-12-11,OpenAI,United States of America,API access,Closed weights,,92.22222222222224
+GPT-5.2 Pro,GPT-5.2 Pro,156.54,153.89,160.64,2025-12-11,OpenAI,United States of America,API access,Closed weights,,
+Gemini 3 Flash,Gemini 3 Flash,152.01,150.63,153.68,2025-12-17,Google DeepMind,United States of America,API access,Closed weights,,89.43602693602693
+GLM-4.7,GLM-4.7,143.65,141.42,145.84,2025-12-22,Z.ai (Zhipu AI),China,Open weights (unrestricted),Open weights,,81.01851851851852
+Kimi K2.5,Kimi K2.5,148.11,146.3,149.45,2026-01-27,Moonshot,China,Open weights (unrestricted),Open weights,,86.94444444444444
+Claude Opus 4.6,Claude Opus 4.6,155.85,154.09,157.98,2026-02-05,Anthropic,United States of America,API access,Closed weights,,91.01430976430977
+GLM-5,GLM-5,145.79,143.77,147.8,2026-02-11,Z.ai (Zhipu AI),China,Open weights (unrestricted),Open weights,,87.246192893401
+MiniMax-M2.5,MiniMax-M2.5,146.68,141.31,147.87,2026-02-12,MiniMax,China,Open weights (unrestricted),Open weights,,
+Qwen3.5 397B-A17B,Qwen3.5 397B-A17B,146.85,145.16,148.89,2026-02-13,Alibaba,China,Open weights (unrestricted),Open weights,,85.22727272727273
+Qwen 3.5 Plus (hosted 397B-A17B),Qwen 3.5 Plus (hosted 397B-A17B),146.25,143.68,147.57,2026-02-16,Alibaba,China,Unknown,Other,,83.12289562289563
+Claude Sonnet 4.6,Claude Sonnet 4.6,152.9,150.11,155.42,2026-02-17,Anthropic,United States of America,API access,Closed weights,,86.63019079685746
+Grok 4.20,Grok 4.20,152.26,149.53,154.72,2026-02-17,xAI,United States of America,API access,Closed weights,,89.34834455667789
+Gemini 3.1 Pro,Gemini 3.1 Pro,155.24,153.31,157.73,2026-02-19,Google DeepMind,United States of America,API access,Closed weights,,96.4506172839506
+Qwen3.5-35B-A3B,Qwen3.5-35B-A3B,142.56,140.42,145.19,2026-02-24,Alibaba,China,Open weights (unrestricted),Open weights,,81.1938832772166
+Qwen3.5-9B,Qwen3.5-9B,139.37,136.14,141.01,2026-02-24,Alibaba,China,Open weights (restricted use),Open weights,,74.96843434343435
+Qwen 3.5 Flash (hosted 35B-A3B),Qwen 3.5 Flash (hosted 35B-A3B),143.61,141.4,145.03,2026-02-25,Alibaba,China,Unknown,Other,,79.61560044893378
+Gemini 3.1 Flash-Lite,Gemini 3.1 Flash-Lite,144.34,142.34,145.91,2026-03-03,Google,United States of America,API access,Closed weights,,78.91414141414143
+GPT-5.4,GPT-5.4,157.14,155.2,159.47,2026-03-05,OpenAI,United States of America,API access,Closed weights,,94.86111111111111
+GPT-5.4 Pro,GPT-5.4 Pro,159.81,157.38,162.99,2026-03-05,OpenAI,United States of America,API access,Closed weights,,96.66666666666669
+GPT-5.4 Mini,GPT-5.4 Mini,148.82,146.91,150.77,2026-03-17,OpenAI,United States of America,API access,Closed weights,,85.9287317620651
+GPT-5.4 Nano,GPT-5.4 Nano,146.14,143.61,148.47,2026-03-17,OpenAI,United States of America,API access,Closed weights,,74.26388888888889
+MiniMax-M2.7,MiniMax-M2.7,145.88,138.62,147.97,2026-03-18,MiniMax,China,Open weights (non-commercial),Open weights,,
+Qwen 3.6 Plus,Qwen 3.6 Plus,147.81,145.78,149.6,2026-03-31,Alibaba,China,API access,Closed weights,,88.0331088664422
+Gemma 4 26B A4B,Gemma 4 26B A4B,141.95,138.97,143.72,2026-04-02,Google DeepMind,United States of America,Open weights (unrestricted),Open weights,,66.98933782267117
+Gemma 4 31B IT,Gemma 4 31B IT,143.08,140.78,145.92,2026-04-02,Google DeepMind,United States of America,Open weights (restricted use),Open weights,,70.496632996633
+GLM-5.1,GLM-5.1,149.88,148.05,151.71,2026-04-07,Z.ai (Zhipu AI),China,Open weights (unrestricted),Open weights,,90.13748597081931
+Muse Spark,Muse Spark,152.15,150.03,154.35,2026-04-08,Meta AI,United States of America,API access,Closed weights,,90.0
+Qwen 3.6 35B-A3B,Qwen 3.6 35B-A3B,143.81,141.08,145.96,2026-04-14,Alibaba,China,Open weights (unrestricted),Open weights,,83.12289562289563
+Claude Opus 4.7,Claude Opus 4.7,156.7,154.99,158.94,2026-04-16,Anthropic,United States of America,API access,Closed weights,,90.48821548821552
+Grok 4.3 Beta,Grok 4.3 Beta,148.95,147.31,150.41,2026-04-17,xAI,United States of America,Hosted access (no API),Closed weights,,88.64688552188554
+Qwen 3.6 Max (Preview),Qwen 3.6 Max (Preview),149.38,147.59,153.34,2026-04-20,Alibaba,China,Unknown,Other,,86.63019079685746
+Kimi K2.6,Kimi K2.6,151.06,149.06,152.88,2026-04-20,Moonshot,China,Open weights (unrestricted),Open weights,,91.36503928170595
+Qwen3.6 27B,Qwen3.6 27B,146.32,144.05,147.84,2026-04-22,Alibaba,China,Open weights (unrestricted),Open weights,,84.52581369248036
+GPT-5.5,GPT-5.5,159.38,156.91,162.8,2026-04-23,OpenAI,United States of America,API access,Closed weights,,95.83684062850728
+GPT-5.5 Pro,GPT-5.5 Pro,163.11,159.99,166.63,2026-04-23,OpenAI,United States of America,API access,Closed weights,,95.72410614077283
+DeepSeek-V4-Flash,DeepSeek-V4-Flash,146.2,143.93,148.24,2026-04-24,DeepSeek,China,Open weights (unrestricted),Open weights,,
+DeepSeek-V4-Pro,DeepSeek-V4-Pro,149.13,147.22,150.86,2026-04-24,DeepSeek,China,Open weights (unrestricted),Open weights,,91.54040404040406
+Qwen 3.6 Flash,Qwen 3.6 Flash,142.97,140.28,144.4,2026-04-27,Alibaba,China,Unknown,Other,,81.01851851851852
+Mistral Medium 3.5,Mistral Medium 3.5,141.46,138.51,143.89,2026-04-28,Mistral AI,France,Open weights (restricted use),Open weights,,
+GPT-5.5 Instant,GPT-5.5 Instant,142.49,140.11,145.28,2026-05-05,OpenAI,United States of America,API access,Closed weights,,79.87864758698092
+Qwen3.7-Max,Qwen3.7-Max,154.22,152.43,156.75,2026-05-19,Alibaba,China,API access,Closed weights,,91.54040404040406
+Gemini 3.5 Flash,Gemini 3.5 Flash,155.03,153.03,157.41,2026-05-19,Google DeepMind,United States of America,API access,Closed weights,,94.17087542087542
+Claude Opus 4.8,Claude Opus 4.8,159.57,157.44,162.44,2026-05-28,Anthropic,United States of America,API access,Closed weights,,91.71576879910214
+MiniMax-M3,MiniMax-M3,146.92,142.41,150.26,2026-06-01,MiniMax,China,Open weights (restricted use),Open weights,,91.54040404040406
+Qwen3.7-Plus,Qwen3.7-Plus,147.11,145.07,148.65,2026-06-02,Alibaba,China,API access,Closed weights,,87.33164983164984
+Nemotron 3 Ultra,Nemotron 3 Ultra,146.02,143.53,148.49,2026-06-04,Nvidia,United States of America,Open weights (unrestricted),Open weights,,83.82435465768798
+Claude Fable 5,Claude Fable 5,163.02,160.56,167.1,2026-06-09,Anthropic,United States of America,API access,Closed weights,,84.52581369248036
+Kimi K2.7 Code,Kimi K2.7 Code,150.23,148.09,151.94,2026-06-12,Moonshot,China,Open weights (unrestricted),Open weights,,87.33164983164984
+GLM-5.2,GLM-5.2,152.07,150.13,154.11,2026-06-16,Z.ai (Zhipu AI),China,Open weights (unrestricted),Open weights,,92.85563973063972
+Claude Sonnet 5,Claude Sonnet 5,157.03,154.23,159.71,2026-06-30,Anthropic,United States of America,API access,Closed weights,,91.01430976430977
+Grok 4.5,Grok 4.5,154.36,152.84,156.55,2026-07-08,xAI,United States of America,API access,Closed weights,,95.04769921436588
+Muse Spark 1.1,Muse Spark 1.1,154.18,151.27,156.36,2026-07-09,Meta AI,United States of America,API access,Closed weights,,
+GPT-5.6 Luna,GPT-5.6 Luna,156.67,154.15,159.28,2026-07-09,OpenAI,United States of America,API access,Closed weights,,92.50491021324356
+GPT-5.6 Sol,GPT-5.6 Sol,162.55,159.63,166.19,2026-07-09,OpenAI,United States of America,API access,Closed weights,,95.13538159371497
+GPT-5.6 Terra,GPT-5.6 Terra,160.09,157.81,163.35,2026-07-09,OpenAI,United States of America,API access,Closed weights,,94.87233445566775
+Inkling,Inkling,148.51,145.81,150.38,2026-07-15,Thinking Machines,United States of America,Open weights (unrestricted),Open weights,,87.85774410774411
+Inkling-Small,Inkling-Small,150.46,147.7,152.38,2026-07-15,Thinking Machines,United States of America,Open weights (unrestricted),Open weights,,88.2084736251403
+Kimi K3,Kimi K3,158.33,155.79,161.35,2026-07-16,Moonshot,China,Open weights (non-commercial),Open weights,,94.60928731762068
+Gemini 3.5 Flash-Lite,Gemini 3.5 Flash-Lite,144.97,142.6,146.32,2026-07-21,Google DeepMind,United States of America,API access,Closed weights,,81.01851851851852
+Gemini 3.6 Flash,Gemini 3.6 Flash,154.69,153.02,156.72,2026-07-21,Google DeepMind,United States of America,API access,Closed weights,,96.01220538720538
+Claude Opus 5,Claude Opus 5,164.47,161.69,168.29,2026-07-24,Anthropic,United States of America,API access,Closed weights,,95.66147586980924
+Qwen3.7 Flash,Qwen3.7 Flash,144.14,141.82,146.18,2026-07-27,Alibaba,China,API access,Closed weights,,79.61560044893378
+DeepSeek V4 Flash 0731,DeepSeek V4 Flash 0731,154.94,152.59,156.83,2026-07-31,DeepSeek,China,Open weights (unrestricted),Open weights,,91.71576879910214
+Qwen 3.8 Max,Qwen 3.8 Max,157.98,155.71,160.77,2026-08-02,Alibaba,China,API access,Closed weights,,93.99551066217734
+Muse Spark 1.2,Muse Spark 1.2,155.2,152.94,157.6,2026-08-05,Meta AI,United States of America,API access,Closed weights,,
+Grok 4.6,Grok 4.6,156.91,155.09,159.38,2026-08-12,xAI,United States of America,API access,Closed weights,,95.83684062850728
+DeepSeek V4 Pro 0813,DeepSeek V4 Pro 0813,155.87,154.17,158.08,2026-08-13,DeepSeek,China,Open weights (unrestricted),Open weights,,92.59259259259261
+Gemini 3.7 Flash,Gemini 3.7 Flash,158.17,156.18,161.36,2026-08-13,Google DeepMind,United States of America,API access,Closed weights,,96.97671156004488
+Qwen 3.8 27B,Qwen 3.8 27B,151.8,149.85,153.63,2026-08-14,Alibaba,China,Open weights (unrestricted),Open weights,,
+GLM-5.3,GLM-5.3,156.17,154.32,158.5,2026-08-14,Z.ai (Zhipu AI),China,Open weights (restricted use),Open weights,,91.54040404040406
+GLM-5.3-Flash,GLM-5.3-Flash,153.22,150.85,155.41,2026-08-20,Z.ai (Zhipu AI),China,Open weights (unrestricted),Open weights,,90.48821548821552
+Qwen3.8 Max (0902),Qwen3.8 Max (0902),156.24,153.72,159.22,2026-09-01,Alibaba,China,API access,Closed weights,,93.46941638608305
+Claude Fable 5.1,Claude Fable 5.1,166.36,163.61,170.75,2026-09-01,Anthropic,United States of America,API access,Closed weights,,
+Gemini 3.8 Flash,Gemini 3.8 Flash,157.64,155.48,160.88,2026-09-02,Google DeepMind,United States of America,API access,Closed weights,,97.76585297418632
+Muse Spark 1.3,Muse Spark 1.3,157.37,155.42,159.9,2026-09-02,Meta AI,United States of America,API access,Closed weights,,
+GPT-6 Astra,GPT-6 Astra,169.06,165.88,174.29,2026-09-03,OpenAI,United States of America,API access,Closed weights,,98.2919472502806
+DeepSeek V4.1 Flash,DeepSeek V4.1 Flash,156.11,153.7,158.3,2026-09-09,DeepSeek,China,Open weights (unrestricted),Open weights,,90.04980359147025
+Grok 4.7,Grok 4.7,154.55,152.58,157.08,2026-09-21,xAI,United States of America,API access,Closed weights,,94.08319304152639
+Claude Opus 5.5,Claude Opus 5.5,168.4,165.37,173.03,2026-09-22,Anthropic,United States of America,API access,Closed weights,,91.10199214365882
+GPT-6 Luna,GPT-6 Luna,156.75,154.01,159.45,2026-09-22,OpenAI,United States of America,API access,Closed weights,,90.92662738496072
+GPT-6 Sol,GPT-6 Sol,163.78,161.1,167.29,2026-09-22,OpenAI,United States of America,API access,Closed weights,,96.27525252525253
+Claude Sonnet 5.5,Claude Sonnet 5.5,166.74,163.58,171.34,2026-09-28,Anthropic,United States of America,API access,Closed weights,,98.02890011223344
+GPT-6.1 Sol,GPT-6.1 Sol,167.82,164.29,172.51,2026-09-29,OpenAI,United States of America,API access,Closed weights,,97.76585297418632
+Gemini 4 Argon,Gemini 4 Argon,166.07,163.14,170.27,2026-09-30,Google DeepMind,United States of America,Limited access,Other,,99.16877104377106
+Beam 1.0,Beam 1.0,150.24,148.85,152.43,2026-10-05,Reflection,United States of America,Open weights (unrestricted),Open weights,,
+Mistral Large 4,Mistral Large 4,150.59,147.4,153.49,2026-10-06,Mistral AI,France,Open weights (restricted use),Open weights,,87.59469696969698
+Claude Haiku 5.5,Claude Haiku 5.5,160.37,157.33,163.84,2026-10-07,Anthropic,United States of America,API access,Closed weights,,89.78675645342314
+Muse Wonder,Muse Wonder,161.71,159.16,164.63,2026-10-12,Meta AI,United States of America,API access,Closed weights,,
+Muse Spark Open,Muse Spark Open,155.05,153.13,157.31,2026-10-15,Meta AI,United States of America,Open weights (restricted use),Open weights,,88.29615600448933
+DeepSeek V4.1 Flash 1017,DeepSeek V4.1 Flash 1017,158.83,156.71,162.2,2026-10-17,DeepSeek,China,Open weights (unrestricted),Open weights,,94.69696969696967
+GPT-6.1 Terra,GPT-6.1 Terra,168.11,164.94,172.94,2026-10-26,OpenAI,United States of America,API access,Closed weights,,96.27525252525253

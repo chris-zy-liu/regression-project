@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\small
+\caption{Adoption forecast errors in percentage points on the same 706 forecasts. Controls use the same feature backbone, tuning grids, and earlier validation dates as their augmented counterparts.}\label{tab:release-adoption}
+\begin{tabular}{lrrrr}
+\toprule
+Specification & All MAE & All RMSE & Historical MAE & Extension MAE \\
+\midrule
+Ridge control & 3.135 & 4.323 & 3.151 & 2.990 \\
+Boosting control & 3.115 & 4.365 & 3.119 & 3.079 \\
+Counts + ridge & 3.202 & 4.398 & 3.180 & 3.394 \\
+Benchmarks + ridge & 3.187 & 4.353 & 3.209 & 2.988 \\
+Benchmarks + NHPP + ridge & 3.267 & 4.431 & 3.301 & 2.962 \\
+NHPP + industry interactions & 3.241 & 4.405 & 3.276 & 2.934 \\
+Benchmarks + NHPP + boosting & 3.120 & 4.360 & 3.125 & 3.078 \\
+\bottomrule
+\end{tabular}
+\end{table}

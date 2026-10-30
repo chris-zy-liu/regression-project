@@ -1,8 +1,9 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,graphicx,booktabs,hyperref,array,float}
+\usepackage{amsmath,amssymb,graphicx,booktabs,array,float}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 \graphicspath{{figures/}}
 \setlength{\emergencystretch}{2em}
@@ -16,22 +17,23 @@
 \setlength{\@fptop}{0pt}
 \makeatother
 \input{generated/numbers.tex}
-\title{Industry Heterogeneity and Nonlinear Forecasts of Small-Business AI Use}
+\input{generated/release_numbers.tex}
+\title{Industry Heterogeneity, LLM Release Processes, and Forecasts of Small-Business AI Use}
 \author{\normalsize Rahul Mehta, Ishaan Mohan, Zhengyu Chris Liu\\
 \normalsize Timothy Kim, Chau M Duong\\[0.3em]
 \normalsize ISYE 4031: Group 1}
-\date{October 26, 2026}
+\date{October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
 We examine industry differences in small-business artificial intelligence (AI) use and evaluate forecasts of published adoption rates three Census releases ahead. A reconstruction of the Business Trends and Outlook Survey reproduces the original Milestone 2 baseline. The extended analysis compares industry models, partial pooling, hierarchical subset selection with nonlinear terms, regularized regression, and gradient boosting under nested temporal validation. The evaluation comprises \ForecastN{} forecasts at \OriginN{} issue dates. \AbstractResult{}
-Industry growth estimates are accompanied by uncertainty intervals and rank distributions. A controlled random-feature experiment evaluates prediction beyond the interpolation threshold. Selected AI release announcements are aligned with survey reference periods. The short observation window, informative missingness, and absence of an untreated comparison group restrict the interpretation of rankings and release-related changes.
+Industry growth estimates are accompanied by uncertainty intervals and rank distributions. A controlled random-feature experiment evaluates prediction beyond the interpolation threshold. A benchmark-marked nonhomogeneous Poisson process models LLM releases, with separate regressions for arrival intensity and capability marks. Its forward forecast is \ReleaseExpected{} benchmarked-catalog releases over 42 days. Benchmark and arrival features provide no clear incremental adoption-forecast improvement over matched controls. Retrospective benchmark calibration, selective catalog coverage, the short survey window, and clustered releases restrict inference.
 \end{abstract}
 
 \section{Introduction}
 Small-business support organizations may use forecasts of AI adoption to anticipate demand for information, training, and implementation assistance. Such forecasts require evidence that improvements persist across industries, business sizes, and forecast dates. Differences in observed adoption also require uncertainty assessment: industries with similar estimated growth rates may have substantially overlapping rank distributions.
 
-This study addresses three questions. First, do industry-specific relationships improve forecasts beyond a pooled linear baseline? Second, do quadratic terms and interactions provide predictive information after temporal validation? Third, how does forecast error change as the number of coefficients approaches and exceeds the number of training rows? We also examine the temporal correspondence between selected AI model releases and survey outcomes. The response is an industry-by-employment-size group's published AI-use percentage, rather than a firm-level adoption indicator or a measure of outreach effectiveness.
+This study addresses four questions. First, do industry-specific relationships improve forecasts beyond a pooled linear baseline? Second, do quadratic terms and interactions provide predictive information after temporal validation? Third, how does forecast error change as the number of coefficients approaches and exceeds the number of training rows? Fourth, can a benchmark-marked release process, with a separately estimated nonstationary arrival rate, supply useful predictors of AI adoption? The response is an industry-by-employment-size group's published AI-use percentage, rather than a firm-level adoption indicator or a measure of outreach effectiveness.
 
 \section{Data and study population}
 \subsection{Source and reconstruction}
@@ -100,13 +102,17 @@ where $d$ is input dimension. Feature centering uses training rows. Three seeds 
 
 For each width we fit minimum-norm least squares and ridge regression with fixed penalty $0.01$. The ridge objective uses the unnormalized residual sum of squares, and the penalty is fixed as a diagnostic rather than tuned on test outcomes. We record rank, effective degrees of freedom, condition number, and training and future errors. Numerical interpolation is assessed directly. Increasing $p$ beyond $n$ does not by itself establish interpolation when the matrix is rank deficient. A fall in future error after a peak near interpolation would be consistent with double descent \cite{belkin}; its occurrence is evaluated empirically for this feature family.
 
+\input{release_methods.tex}
+
 \input{results.tex}
+\input{release_results.tex}
 
 \section{Discussion}
 \input{discussion.tex}
 
 \section{Conclusion}
 \ConclusionResult{}
+The fitted nonstationary release regression forecasts benchmarked-catalog arrivals, while its independent-Poisson assumptions are weakened by batching. Benchmark scores and expected arrivals do not show a clear adoption-forecast gain over matched controls in the available survey window.
 The practical value of a forecast depends on stable performance across issue dates and relevant business groups. Ranking uncertainty should accompany industry comparisons. Release timing provides hypotheses for further investigation, while credible causal attribution would require additional exposure information or an appropriate comparison design.
 
 \section*{Acknowledgments}
@@ -126,6 +132,8 @@ AI assistance was used to develop the analysis code and revise the manuscript. T
 \bibitem{opus46} Anthropic. \emph{Introducing Claude Opus 4.6}, February 5, 2026. \url{https://www.anthropic.com/news/claude-opus-4-6}.
 \bibitem{gemini31} Google DeepMind. \emph{Gemini 3.1 Pro Model Card}, February 19, 2026. \url{https://deepmind.google/models/model-cards/gemini-3-1-pro}.
 \bibitem{gpt54} OpenAI. \emph{Introducing GPT-5.4}, March 5, 2026. \url{https://openai.com/index/introducing-gpt-5-4/}.
+\bibitem{epoch} Epoch AI. \emph{Epoch Capabilities Index and Methodology}, October 30, 2026 data vintage. Model scores and benchmark results, CC BY 4.0. \url{https://epoch.ai/eci}; \url{https://epoch.ai/data/eci-documentation/methodology}.
+\bibitem{glm} Statsmodels developers. \emph{Generalized Linear Models: Poisson Family}. \url{https://www.statsmodels.org/stable/glm.html}.
 \end{thebibliography}
 \clearpage
 \appendix

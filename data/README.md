@@ -15,3 +15,13 @@ The accompanying `.provenance.json` records the retrieval date, source URL, and 
 `ai_releases.csv` contains six illustrative release announcements verified against provider publications. It is a selected chronology, not an exhaustive model-release database. These events were selected before estimating event-window changes in this implementation. Their timing overlaps, and the earliest events have insufficient pre-event observations in the comparable survey series.
 
 Use `python download_data.py` to retrieve a Census workbook when the host is available. Supply it with `--workbook` to run the same pipeline directly on the original schema. The workbook path also enables additional first-answer shares from non-AI survey questions. Those predictors are unavailable in the included CSV run and are not represented as observed results.
+
+## Benchmark-marked release catalog
+
+`eci_scores_2026-10-30.csv` and `eci_benchmarks_2026-10-30.csv` are unmodified downloads from Epoch AI, [Epoch Capabilities Index](https://epoch.ai/eci), retrieved October 30, 2026. Source files: https://epoch.ai/data/eci_scores.csv and https://epoch.ai/data/eci_benchmarks.csv . Each companion provenance JSON records its SHA-256 and URL. **Attribution:** Epoch AI, Epoch Capabilities Index, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Methodology: https://epoch.ai/data/eci-documentation/methodology . Derived tables, rate regressions, and simulations are this project's calculations.
+
+The score file has 271 canonical models and release dates; 221 fall in the January 1, 2024–October 30, 2026 intensity window. A canonical model record is one arrival. Separately listed model variants count separately. Provider-day batches are an explicit sensitivity analysis. The scored catalog is a selected set, not a census of all LLM releases.
+
+The benchmark file contains model-by-benchmark results. GPQA Diamond is aggregated to the median score among a canonical model's listed evaluation variants. The ECI estimates and their reported intervals are retained without refitting Epoch's calibration. Missing GPQA scores are not filled at model level.
+
+Historical release dates do **not** establish historical score availability. The October 30 ECI/benchmark vintage may incorporate evaluations and calibration performed after a model's release date. Thus release-date-restricted historical adoption comparisons are retrospective fixed-vintage analyses, not verified real-time backtests. Future simulations also condition on current catalog coverage and model assumptions. These limitations are stated in the revised report.

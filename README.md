@@ -1,4 +1,4 @@
-# Industry Heterogeneity and Nonlinear Forecasts of Small-Business AI Use
+# Industry Heterogeneity, LLM Release Processes, and Forecasts of Small-Business AI Use
 
 ISYE 4031, Group 1. Census Business Trends and Outlook Survey (BTOS), employers with 1–99 employees, three-release forecast horizon (approximately six weeks).
 
@@ -26,6 +26,23 @@ The extended analysis reproduces the original historical baseline and evaluates 
 - Finance, Information, and professional services form the leading estimated growth group. Finance and Information cannot be confidently ordered.
 - The random-feature experiment reaches interpolation and an overparameterized regime. Unregularized minimum-norm predictions become unstable; ridge controls their errors.
 - Selected AI announcements coincide with some adoption increases, but overlapping events and the underlying trend prevent causal attribution. The short series cannot establish annual seasonality.
+
+## Benchmark scores and nonstationary release process
+
+The October 30 update adds Epoch AI's 271-model scored catalog (221 releases from 2024 onward), ECI and GPQA Diamond benchmark features, a nonhomogeneous Poisson release process, and a separate regression of capability marks. Seven matched adoption specifications test past counts, benchmark marks, expected future releases, industry interactions, and boosting. Results and validation audits are under [`results/releases/`](results/releases/).
+
+The selected rate regression is **lambda per day = exp(-4.246 + 0.237 × years since January 1, 2024 + 2.656 × weekday indicator)**. It predicts **12.48 scored-catalog releases during October 31–December 11, 2026**, with a conditional 90% simulated range of **6–20** (overdispersion sensitivity: **6–21**). This is a forecast of models included in the benchmark catalog, not all LLM releases. Batching weakens the independent-Poisson assumption.
+
+Benchmark/NHPP boosting has adoption MAE **3.120**, versus **3.115** for its matched boosting control. Ridge with benchmark/NHPP features has MAE **3.267**, versus **3.135** for its control. These comparisons do not establish incremental adoption-prediction value. The benchmark vintage is retrospectively calibrated; historical score-publication availability cannot be verified. The report explicitly separates this limitation from release-date filtering.
+
+```powershell
+python release_process.py --as-of 2026-10-30 --simulations 2000
+python -m unittest test_release_process test_analysis -v
+python validate_release_results.py
+python build_report.py
+```
+
+Then compile `report/main.tex` as below. `build_report.py` generates the original tables and, when release outputs exist, calls `build_release_report.py` for the new tables and figures. The benchmark snapshots and their source hashes are committed; replacing them with later calibration vintages changes the experiment. See [`data/README.md`](data/README.md) for attribution and scope.
 
 ## Data and interpretation
 

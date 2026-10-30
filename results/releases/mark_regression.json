@@ -1,0 +1,9 @@
+{
+  "intercept": 112.11894027836946,
+  "eci_slope_per_year": 17.40014063813567,
+  "slope_se_provider_week_clustered": 1.0495732780129539,
+  "covariance": "Two-way provider and release-week clustered; PSD projection used for simulation if needed.",
+  "residual_sd": 7.654356019361898,
+  "releases": 221,
+  "interpretation": "Regression of release marks, not the frontier trend."
+}

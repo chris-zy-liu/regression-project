@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\small
+\caption{Release-rate model selection using six earlier, disjoint 42-day validation windows. NLL is mean daily negative log likelihood; dispersion uses the final fit. Forecast counts cover October 31--December 11, 2026.}\label{tab:release-rate}
+\begin{tabular}{lrrrr}
+\toprule
+Rate regression & Validation NLL & Count MAE & Expected count & Dispersion \\
+\midrule
+Constant & 0.759 & 4.75 & 8.98 & 1.55 \\
+Linear time & 0.744 & 3.38 & 12.51 & 1.59 \\
+Quadratic time & 0.751 & 3.69 & 14.45 & 1.59 \\
+Time + weekday & 0.671 & 3.39 & 12.48 & 1.37 \\
+Time + annual cycle & 0.742 & 3.72 & 9.06 & 1.60 \\
+\bottomrule
+\end{tabular}
+\end{table}

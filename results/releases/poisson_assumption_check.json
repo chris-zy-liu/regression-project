@@ -1,0 +1,9 @@
+{
+  "observed_days_with_2plus": 47,
+  "poisson_expected_days_with_2plus": 21.0678326532559,
+  "batch_tail_probability_exploratory": 0.0,
+  "note": "Plug-in model check; catalog selection and provider batches violate ideal independent-arrival sampling.",
+  "selected_model": "linear_weekday",
+  "selected_expected_days_with_2plus": 26.47309991354396,
+  "selected_batch_tail_probability": 0.0
+}
