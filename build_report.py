@@ -114,14 +114,16 @@ def main():
 \subsection{Computational record}
 The repository includes the unchanged original report and code, an attributed source extract and hash, all predictions, selected blocks, tuning parameters, validation audits, industry bootstrap draws, event windows, complexity diagnostics, and the LaTeX source. Reproduction requires Python with the packages listed in \texttt{requirements.txt}. The commands are:
 \begin{verbatim}
-python -m unittest test_analysis -v
+python -m unittest test_analysis test_release_process -v
 python extended_analysis.py --workbook data/btos_ai_extract_2026-10-15.csv
+python release_process.py --as-of 2026-10-30 --simulations 2000
+python validate_release_results.py
 python build_report.py
 cd report
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
 \end{verbatim}
-Regression tests verify the original counts and rounded performance values, temporal training boundaries, hierarchy constraints, training-only preprocessing, rank handling, and recovery of a quadratic signal in synthetic data. The original baseline has 21 coefficients. Full-model column counts and ranks are recorded separately; redundant columns do not count as independent information.
+Regression tests verify the original counts and rounded performance values, temporal training boundaries, hierarchy constraints, training-only preprocessing, rank handling, and recovery of a quadratic signal in synthetic data. Release-process checks verify zero-event days, date filtering, integrated intensities, simulation ranges, and matched adoption controls. Benchmark snapshots and provenance hashes are committed. The original baseline has 21 coefficients. Full-model column counts and ranks are recorded separately; redundant columns do not count as independent information.
 '''
     (G/'appendix.tex').write_text(append,encoding='utf-8')
     findings = {'best_model':best,'best_mae':float(allp.loc[best,'mae']),
@@ -131,6 +133,9 @@ Regression tests verify the original counts and rounded performance values, temp
                 'nonlinear_subset_mae':float(allp.loc['subset_nonlinear','mae'])}
     (R/'key_findings.json').write_text(json.dumps(findings,indent=2)+'\n')
     print(json.dumps(findings,indent=2))
+    if (R/'releases/summary.json').exists():
+        from build_release_report import main as build_release
+        build_release()
 
 
 if __name__=='__main__':

@@ -1,0 +1,34 @@
+{
+  "as_of": "2026-10-30",
+  "catalog_models_all_years": 271,
+  "catalog_models_since_2024": 221,
+  "rate_start": "2024-01-01",
+  "simulations": 2000,
+  "selected_rate_model": "linear_weekday",
+  "forecast_start": "2026-10-31",
+  "forecast_end": "2026-12-11",
+  "expected_count_plugin": 12.483131435143433,
+  "simulated_count_mean": 12.7015,
+  "count_interval_90": [
+    6.0,
+    20.0
+  ],
+  "overdispersed_count_interval_90": [
+    6.0,
+    21.0
+  ],
+  "current_frontier": 169.06,
+  "frontier_mean": 172.39067742028584,
+  "frontier_interval_90": [
+    169.06,
+    176.4448080316436
+  ],
+  "adoption_forecasts": 706,
+  "adoption_origins": 10,
+  "scores_sha256": "01dc8746fa5638e7c01e86dea1d332e98e0b3c22e33e8fa251e2c9422fd17ba5",
+  "benchmark_vintage_limitation": "October 30 ECI/benchmark estimates are retrospectively calibrated; release-date filtering is not historical score-publication filtering.",
+  "process_scope": "Arrivals of canonical models included in the scored Epoch catalog; not all LLM releases.",
+  "forecast_scope": "Conditional model forecast; catalog coverage, batching, and misspecification are not resolved by simulation.",
+  "benchmarks_sha256": "684e90eccb8750677055f945980682268e48c44655bebe6bb4ecb43f17cc4957",
+  "adoption_pairs_sha256": "ec0ccb4b55edc2807d2f5af13a36b23d79d1d10b3b2e3fbda9e6b80a1ee44f45"
+}

@@ -1,0 +1,46 @@
+\subsection{Benchmark-marked LLM release data}
+The release analysis uses Epoch AI's October 30, 2026 catalog, containing \CatalogAll{} canonical model records with release dates and Epoch Capabilities Index (ECI) scores. The intensity regression uses the \CatalogEvents{} records released from January 1, 2024 through October 30, 2026. This definition includes model variants that Epoch records separately and excludes releases absent from its scored catalog. The target process is therefore the arrival of benchmarked catalog models, not the complete population of LLM releases. Provider-by-date batches are examined as an alternative event unit.
+
+ECI combines benchmark results through an item-response model and provides a common capability scale \cite{epoch}. Its numeric origin is a calibration convention. We use ECI as a mark attached to each event and GPQA Diamond as a supplementary, directly interpretable benchmark percentage. For models with multiple GPQA evaluation variants, their median is used. The original files, source URLs, hashes, license attribution, and canonical model mapping are retained.
+
+Historical model release dates are available, but historical score-publication timestamps and benchmark vintages are not. A model released before an issue date can receive an ECI estimate calibrated using later evaluations. Restricting events by release date therefore does not establish that their current scores were available at the time. All benchmark-augmented adoption comparisons are retrospective analyses of this fixed score vintage. No real-time deployment accuracy is claimed.
+
+\subsection{Nonhomogeneous Poisson intensity regression}
+Let $N(A)$ count catalog model releases in a time interval $A$. Conditional on an intensity function, the nonhomogeneous Poisson process (NHPP) assumes independent increments and
+\begin{equation}
+ N([a,b])\sim\operatorname{Poisson}\!\left(\Lambda(a,b)\right),\qquad
+ \Lambda(a,b)=\int_a^b\lambda(u)\,du.
+\end{equation}
+Dates are observed at daily resolution. We use a piecewise constant daily intensity, so the integrated intensity is an exact sum of daily means. Zero-release days are retained. If $Y_d$ is the number of releases on day $d$, the rate regression is
+\begin{equation}
+ Y_d\sim\operatorname{Poisson}(\lambda_d),\qquad
+ \log\lambda_d=\beta_0+\beta_1t_d+\beta_2W_d,
+ \label{eq:nhpp-rate}
+\end{equation}
+where $t_d$ is elapsed years since January 1, 2024 and $W_d$ indicates Monday through Friday. The exposure is one day. Poisson GLM maximum likelihood estimates the coefficients \cite{glm}; a seven-day HAC covariance supplies approximate coefficient uncertainty. Calendar effects make the rate nonstationary even without a positive secular trend.
+
+The candidate rate regressions are constant intensity, linear time, quadratic time, linear time plus weekday, and linear time plus an annual sine/cosine pair. At each issue date, the specification is selected by mean daily negative log likelihood over six earlier, disjoint 42-day windows. Each validation window has its own fit using only preceding dates and at least one year of history. The final October 30 forecast repeats this procedure. Selection scores are reported as selection criteria, not as an independent test of the chosen final specification.
+
+Pearson dispersion, residual lag-one correlation, and the frequency of days with multiple releases assess the independent-Poisson assumption. A plug-in simulation compares observed multi-release days with 2,000 Poisson replications. Provider-day grouping assesses sensitivity to joint announcements. An additional predictive sensitivity replaces daily Poisson counts with moment-matched negative-binomial counts having mean $\lambda_d$ and variance $\phi\lambda_d$, where $\phi$ is the selected model's Pearson dispersion. This sensitivity is an overdispersed count model, rather than an NHPP.
+
+\subsection{Regression of benchmark marks and future releases}
+For a released model $j$, capability is modeled as
+\begin{equation}
+ C_j=\alpha_0+\alpha_1t_j+\eta_j.
+ \label{eq:mark-regression}
+\end{equation}
+OLS estimates the conditional mean ECI among catalog releases, rather than the frontier trajectory. Parameter covariance is clustered by provider and release week. Future arrivals are simulated from independent daily Poisson increments, and each receives a regression-predicted ECI plus a sampled fitted residual. The simulated frontier is the maximum of the current observed frontier and the marks of future arrivals.
+
+For the forward 42-day forecast, Gaussian coefficient draws from the estimated rate and mark covariances approximately propagate parameter uncertainty; non-positive numerical covariance eigenvalues are truncated to zero for simulation. These intervals remain conditional on the catalog, regression forms, mark residual distribution, and Poisson assumption. They do not account fully for selective benchmark coverage, future benchmark revisions, dependence among future releases, or changing developer composition. The overdispersed count interval is reported separately. A future model name or exact release date is not inferred.
+
+\subsection{Linking the release process to adoption}
+The known release predictors are the preceding 42-day release count, released-model ECI frontier, mean recent ECI, frontier gain, released-model GPQA frontier, and a decaying capability index,
+\begin{equation}
+ S(d)=\sum_{j:T_j\le d}\max\!\left\{\frac{C_j-100}{10},0\right\}
+          \exp\!\left(-\frac{d-T_j}{90}\right).
+\end{equation}
+The reference of 100 ECI and decay of 90 days are fixed index conventions. They do not define economically equivalent units of AI capability.
+
+Future predictors are the integrated expected arrival count, expected capability-weighted arrival load, and Monte Carlo expected frontier gain. They are computed from regressions refitted at each row's own issue date. Their endpoint is the target survey's reference-period end. In the included calendar, a $t+3$ outcome is published 42 days after the issue date but refers to a period ending 18 days before that publication; hence the unknown future exposure is 24 days. Releases after that reference end cannot explain the target and are excluded. This exposure horizon is separate from the 42-day forward forecast of catalog releases.
+
+Seven adoption specifications share the earlier full predictor backbone: ridge and boosting controls, ridge plus past release counts, ridge plus observed benchmark marks, ridge plus benchmark and NHPP predictors, a ridge model adding industry interactions with the release features, and boosting with the full release dictionary. Industry interactions include current frontier, capability stock, expected arrivals, and expected frontier gain; a frontier-by-current-adoption interaction is also included. Regularization and boosting complexity are selected using the same nested temporal folds as their controls. Generated predictors are precomputed at each historical issue date without substituting realized later arrivals. Point predictions use generated feature means; they are not a joint likelihood fit of adoption and release arrivals, and do not constitute calibrated adoption prediction intervals.

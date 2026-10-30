@@ -1,0 +1,71 @@
+\section{Benchmark-Marked Release Forecasts}
+\subsection{Benchmark evidence and estimated arrival rate}
+The catalog contains \CatalogAll{} scored model records, including \CatalogEvents{} releases in the intensity-estimation window. Table~\ref{tab:release-marks} attaches benchmark scores to the six announcements considered in the earlier event chronology; the full catalog supplies the rate model. A selected six-event timeline would not provide an adequate denominator for estimating the broader release rate.
+
+\input{generated/release_benchmarks.tex}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.94\linewidth]{benchmark_marks.pdf}
+\caption{Release capability marks and the running ECI frontier, with GPQA Diamond scores shown separately. Scores use the October 30, 2026 vintage and are not historical score-publication snapshots. The plotted GPQA values are model-level medians across listed variants.}
+\label{fig:benchmark-marks}
+\end{figure}
+
+The rolling rate comparison selects linear time plus weekday. Its estimated intensity is
+\begin{equation}
+ \widehat\lambda_d=\exp\!\left(\ReleaseBetaZero{}+
+       \ReleaseBetaTime{}t_d+\ReleaseBetaWeekday{}W_d\right)
+       \quad\text{catalog releases per day}.
+\end{equation}
+The time coefficient is approximately 0.237 per year, with HAC interval $[0.008,0.467]$. Holding weekday status fixed, the annual rate multiplier is approximately \ReleaseGrowthFactor{}. This describes the scored catalog's release rate and may reflect changes in which models receive benchmark coverage. It does not estimate a population-wide rate of all LLM introductions.
+
+The selected model's mean daily validation NLL is 0.671, compared with 0.759 for constant intensity. Its 42-day count MAE is 3.39, compared with 4.75 for constant intensity. The time-only model has count MAE of 3.38 but a worse daily log score, illustrating the difference between predicting total counts and their calendar distribution. All 23 survey issue dates independently select the time-plus-weekday specification using earlier release history.
+
+\input{generated/release_rate_comparison.tex}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.95\linewidth]{release_intensity.pdf}
+\caption{Observed weekly catalog arrivals and the fitted log-linear NHPP mean. Dashed forecast curves show the time-only and selected time-plus-weekday regressions. Forecast points sum daily intensities over six complete, nonoverlapping seven-day intervals beginning October 31. The incomplete historical calendar week is omitted. The vertical line marks October 30, 2026.}
+\label{fig:release-rate}
+\end{figure}
+
+\subsection{Future arrival and capability forecasts}
+For October 31 through December 11, 2026, the selected rate regression gives
+\begin{equation}
+ \widehat\Lambda_{42}=\sum_{d=\text{Oct. 31}}^{\text{Dec. 11}}\widehat\lambda_d
+       =\ReleaseExpected{}.
+\end{equation}
+Across 2,000 conditional simulations with parameter uncertainty, the central 90\% count interval is \ReleaseLow{}--\ReleaseHigh{} catalog releases. A moment-matched overdispersion sensitivity expands it to \ReleaseNBLow{}--\ReleaseNBHigh{}. These are model-based predictive ranges for this catalog definition, rather than a census forecast of all model releases.
+
+The mark regression estimates an average ECI slope of \MarkSlope{} points per year among scored releases, with provider/week-clustered standard error \MarkSlopeSE{}. Its residual standard deviation is 7.65 ECI points. Starting from the observed frontier of 169.06, simulated frontier ECI after 42 days has mean \FutureFrontier{} and central 90\% interval $[\FutureFrontierLow{},\FutureFrontierHigh{}]$. The lower endpoint reflects the possibility that no arriving model exceeds the current frontier. These projections depend on extrapolating the release-mark distribution; they are not predictions of particular models or independently calibrated frontier intervals.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{release_forecast_distribution.pdf}
+\caption{Conditional simulations of 42-day catalog release counts and maximum ECI. Rate and mark coefficient uncertainty is included approximately. The frontier distribution has mass at the existing maximum. Benchmark-calibration uncertainty and future catalog-selection changes are not fully represented.}
+\label{fig:release-simulation}
+\end{figure}
+
+\subsection{Poisson assumptions and sensitivity}
+The selected rate fit has Pearson dispersion \ReleaseDispersion{}, above the Poisson value of one, and residual lag-one correlation of 0.073. There are 47 days with at least two catalog releases, compared with approximately 26.5 expected under the selected independent-arrival model. None of 2,000 plug-in Poisson replications has as many such days. This is a model diagnostic, rather than a formally calibrated test following model selection. The evidence indicates residual batching beyond weekday effects.
+
+Collapsing releases to provider-day batches reduces the intensity sample from 221 model events to 179 batch events. In the time-only regression, dispersion falls from 1.59 to 1.10. Its 42-day forecast is 11.45 provider-day batches, which has a different unit from the model-count forecast. The sensitivity supports joint-announcement behavior as one explanation for overdispersion. A Poisson rate regression remains useful as a conditional mean specification, while its independent-increment predictive assumptions require qualification.
+
+\subsection{Incremental value for adoption forecasting}
+Table~\ref{tab:release-adoption} evaluates release-augmented regressions on the original 706 forecasts. The matched ridge control reproduces the earlier ridge MAE of 3.135 pp. Adding observed release counts gives 3.202 pp, observed benchmark features give 3.187 pp, and benchmark plus NHPP features give 3.267 pp. Industry interactions reduce the latter to 3.241 pp. The extension-date results are more favorable for some augmented models, but represent only one forecast origin.
+
+\input{generated/release_adoption.tex}
+
+Matched boosting controls provide a separate comparison for the nonlinear learner. Boosting without release features has MAE of 3.115 pp, compared with 3.120 pp when benchmark and NHPP features are added. The origin-level difference is $+0.004$ pp, with exploratory block interval $[-0.024,0.033]$. Hence a low overall error from the augmented boosting model cannot be attributed to the release features. The earlier separate-industry model remains more accurate overall, at 3.039 pp.
+
+\input{generated/release_adoption_pairs.tex}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.95\linewidth]{adoption_release_comparison.pdf}
+\caption{Adoption MAE for controls and release-augmented specifications. All models use identical outer forecast observations and nested temporal tuning. The dashed line is the earlier separate-industry model's MAE. The experiment is retrospective because historical benchmark score vintages are unavailable.}
+\label{fig:release-adoption}
+\end{figure}
+
+The additional regressions satisfy the proposed stochastic-release mechanism, but the available sample does not establish incremental adoption-prediction value. Benchmark features are shared across groups at a date and correlate with calendar time, while survey rates have substantial measurement noise. With only ten evaluation origins, these factors limit the ability to distinguish a benchmark-release mechanism from general adoption trends. No causal effect of release frequency or benchmark performance is identified.

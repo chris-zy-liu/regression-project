@@ -9,7 +9,7 @@
 \begin{center}
 {\Large\bfseries Changes Since Milestone 2}\\[5pt]
 {\small Rahul Mehta, Ishaan Mohan, Zhengyu Chris Liu, Timothy Kim, Chau M Duong}\\[2pt]
-{\small ISYE 4031: Group 1 \quad October 27, 2026}
+{\small ISYE 4031: Group 1 \quad October 30, 2026}
 \end{center}
 \begin{itemize}
 \setlength{\itemsep}{5pt}
@@ -17,7 +17,7 @@
 \item \textbf{Data and evaluation}
   \begin{itemize}\setlength{\itemsep}{0pt}
   \item \textbf{Method:} Reconstructed Census data; nested temporal validation; paired block-bootstrap comparisons.
-  \item \textbf{Result:} 706 forecasts at 10 dates (635 historical + 71 already in the original prospective check). No additional release beyond that check; original baseline reproduced.
+  \item \textbf{Result:} 706 forecasts at 10 dates (635 historical + 71 already in the original prospective check). No additional Census release beyond that check; original baseline reproduced.
   \end{itemize}
 \item \textbf{Industry-specific models}
   \begin{itemize}\setlength{\itemsep}{0pt}
@@ -44,16 +44,16 @@
   \item \textbf{Method:} Varied random-feature counts above and below training-row counts; compared minimum-norm least squares with ridge.
   \item \textbf{Result:} Minimum-norm fits interpolate training data but produce extreme future errors. Ridge stabilizes the larger representations; unregularized overparameterization is not competitive.
   \end{itemize}
-\item \textbf{AI release timing}
+\item \textbf{Benchmark scores and nonstationary LLM releases}
   \begin{itemize}\setlength{\itemsep}{0pt}
-  \item \textbf{Method:} Aligned six announcements with survey reference periods using 65 fully observed groups.
-  \item \textbf{Result:} Three events have sufficient history; pre/post increases range from 0.45 to 1.61 percentage points. Overlapping events and trends prevent causal attribution.
+  \item \textbf{Method:} Added ECI/GPQA scores, Poisson regression for a time-varying release rate, and regression for future capability marks; tested arrival predictors and industry interactions.
+  \item \textbf{Result:} Forecast: \textbf{12.48 catalog releases in 42 days} (conditional 90\% range: 6--20). Benchmark/NHPP boosting MAE: 3.120 versus 3.115 for its control; no clear improvement. Release batching weakens Poisson assumptions.
   \end{itemize}
 \item \textbf{Remaining questions}
   \begin{itemize}\setlength{\itemsep}{0pt}
   \item Do gains persist on future releases? Can official workbooks verify the extract and add predictors?
   \item Are rankings and nonlinear expectation terms stable? Does interpolation behavior survive other feature choices?
-  \item What evidence could identify release effects, and what outreach decision should forecasts support?
+  \item Can benchmark publication histories and release-batch models improve the Poisson analysis? What evidence could identify adoption effects?
   \end{itemize}
 \end{itemize}
 \end{document}
