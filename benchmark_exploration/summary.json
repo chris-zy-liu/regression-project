@@ -1,0 +1,9 @@
+{
+  "archive_sha256": "00f4f50aa694bb6973b8eec14f5061607eebde8ebc5e31d6b030fa4dd4e07af7",
+  "source": "https://epoch.ai/benchmarks/use-this-data",
+  "benchmark": "GPQA Diamond, Epoch internal runs, mean_score",
+  "comparison_count": 7,
+  "carry_mae_score_points": 0.5542568542568548,
+  "trend_mae_score_points": 2.0990620490620233,
+  "limitations": "Retrospective current catalogue; run start and model release are only a lower bound on public availability. Scores can be revised and models have different evaluation setups. Selection, time range and rolling window were chosen after observing the dataset. No causal or prospective claim."
+}

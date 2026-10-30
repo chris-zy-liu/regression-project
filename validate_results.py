@@ -1,5 +1,6 @@
 """Audit saved results independently of the fitting loops."""
 from pathlib import Path
+import argparse
 import hashlib
 import json
 import numpy as np
@@ -8,10 +9,16 @@ from extended_analysis import MODELS, moving_blocks
 
 
 def main():
-    r = Path('results')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--results', type=Path, default=Path('results'))
+    r = parser.parse_args().results
     summary = json.loads((r/'summary.json').read_text())
-    source = Path(summary['workbook'])
-    assert hashlib.sha256(source.read_bytes()).hexdigest() == summary['sha256']
+    source = Path(summary['workbook'].replace('\\', '/'))
+    source_bytes = source.read_bytes()
+    source_hash = hashlib.sha256(source_bytes).hexdigest()
+    if source_hash != summary['sha256'] and b'\r\n' not in source_bytes:
+        source_hash = hashlib.sha256(source_bytes.replace(b'\n', b'\r\n')).hexdigest()
+    assert source_hash == summary['sha256'], 'Source differs from the recorded file beyond line endings'
     p = pd.read_csv(r/'predictions.csv', parse_dates=['origin','target_published'])
     assert len(p) == summary['forecasts']
     assert p.origin.nunique() == summary['origins']

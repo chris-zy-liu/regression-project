@@ -15,3 +15,8 @@ revision_summary/*.out
 revision_summary/*.toc
 revision_summary/*.synctex.gz
 revision_summary/main.pdf
+Milestone2_Code_Group1/data/
+Milestone2_Code_Group1/output/
+milestone2_final/*.aux
+milestone2_final/*.log
+milestone2_final/*.out

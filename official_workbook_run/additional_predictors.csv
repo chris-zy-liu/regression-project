@@ -1,0 +1,21 @@
+feature,question,answer
+q3_answer1,"Overall, how would you describe this business's current performance?",Excellent
+q4_answer1,"In the last two weeks, how did this business's operating revenues/sales/receipts change?",Increased
+q5_answer1,"In the last two weeks, how did this business's number of paid employees change?",Increased
+q6_answer1,"In the last two weeks, how did the total number of hours worked by this business's paid employees change?",Increased
+q8_answer1,"In the last two weeks, how did the time it takes for this business to receive deliveries from suppliers change?",Increased
+q9_answer1,How would you describe this business's current inventories?,Larger than optimal
+q10_answer1,"In the last two weeks, how did demand for this business's goods or services change?",Increased
+q11_answer1,"In the last two weeks, how did the prices this business charges for its own goods or services change?",Increased
+q12_answer1,"In the last two weeks, how did the prices this business pays for goods or services change?",Increased
+q13_answer1,"In the last six months, in what ways did changes to interest rates negatively impact this business?",Decreased profitability
+q14_answer1,"In the last six months, did this business experience any monetary losses due to an extreme weather event (for example, hurricane, flood, drought, or heat wave)?",Yes
+q15_answer1,What type of extreme weather event caused the monetary losses?,Wildfire
+q16_answer1,"Six months from now, how do you think you will describe this business's performance?",Excellent
+q17_answer1,"Six months from now, how do you think this business's number of paid employees will have changed?",Increased
+q18_answer1,"Six months from now, how do you think the total number of hours worked by this business's paid employees will have changed?",Increased
+q19_answer1,"Six months from now, how do you think the time it takes for this business to receive deliveries from suppliers will have changed?",Increased
+q20_answer1,"Six months from now, how do you think you will describe this business's inventories?",Larger than optimal
+q21_answer1,"Six months from now, how do you think demand for this business's goods or services will have changed?",Increased
+q22_answer1,"Six months from now, how do you think the prices this business charges for its own goods or services will have changed?",Increased
+q23_answer1,"Six months from now, how do you think the prices this business pays for goods or services will have changed?",Increased

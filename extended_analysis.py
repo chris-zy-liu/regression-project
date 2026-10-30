@@ -629,11 +629,12 @@ def nonlinear_curves(pair, groups, extra, dates, periods):
 def event_analysis(panel, groups, dates):
     """Align releases to reference windows; separate visual timing from causal effects."""
     events = pd.read_csv(ROOT / 'data/ai_releases.csv', parse_dates=['date'])
-    refcols = [c for c in dates.columns if 'reference' in c.lower() and 'end' in c.lower()]
+    refcols = [c for c in dates.columns if 'end' in c.lower() and
+               ('reference' in c.lower() or c.lower().strip() == 'ref end')]
     # Fail explicitly rather than silently substitute publication dates.
     if not refcols:
         raise ValueError(f'No reference-end date column in {list(dates.columns)}')
-    ref = dates[refcols[0]]
+    ref = pd.to_datetime(dates[refcols[0]], errors='raise')
     d = panel[[k in groups for k in zip(panel.Sector, panel.Empsize)]].copy()
     wide = d.pivot(index='step', columns=['Sector', 'Empsize'], values='rate')
     # Use a constant fully observed group set so changing suppression does not
@@ -873,7 +874,9 @@ def main():
                'bootstrap_draws': args.bootstrap, 'complexity_seeds': args.complexity_seeds,
                'median_target_se': float(result.target_se.median()),
                'source_type': 'Third-party Census extract' if args.workbook.suffix.lower()=='.csv' else 'Census workbook',
-               'vintage_limitation': 'Original snapshot unavailable; this analysis uses the recorded downloaded vintage. Missing extract rows are unavailable estimates; their exact original flags cannot be recovered.',
+               'vintage_limitation': ('Original snapshot unavailable; this analysis uses the recorded downloaded vintage. Missing extract rows are unavailable estimates; their exact original flags cannot be recovered.'
+                                      if args.workbook.suffix.lower() == '.csv' else
+                                      'The supplied workbook is one downloaded vintage, not a reconstruction of data available at each historical forecast date.'),
                'extension_limitation': 'Later outcomes are retrospective extension tests; new methods were specified after their publication.'}
     write_json(OUT/'summary.json', summary)
     print(perf.to_string(index=False))
