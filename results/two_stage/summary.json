@@ -1,0 +1,93 @@
+{
+  "stage1": {
+    "issue_dates": 23,
+    "mean_actual_count_24d": 6.173913043478261,
+    "poisson_mae": 2.5763210482908017,
+    "carry_forward_last24_mae": 3.608695652173913,
+    "historical_average_rate_mae": 2.8261291718841757,
+    "poisson_noise_floor_mae": 1.8186150604125775,
+    "poisson_bias": -0.9737839477509717,
+    "skill_vs_carry_forward": 0.2860797095097779,
+    "skill_vs_historical_average": 0.08839232335117486,
+    "coverage_90": 0.782608695652174,
+    "pearson_dispersion_selected": 1.3665755072089265,
+    "pearson_dispersion_linear": 1.5900288868104553,
+    "rate_cv_42day_mae": {
+      "constant": 4.751583790826955,
+      "linear": 3.3772432413549214,
+      "linear_annual": 3.7157281745543815,
+      "linear_weekday": 3.3929479606273243,
+      "quadratic": 3.694369114332236
+    }
+  },
+  "stage1_signal": {
+    "distinct_values_per_issue_date": "one value shared by all 71 groups",
+    "corr_expected_count_with_time": 0.9453850814162499,
+    "corr_actual_count_with_time": 0.34865726157801524,
+    "corr_expected_with_actual": 0.12395480785322077,
+    "vif_expected_count_on_time": 9.412026219753661
+  },
+  "stage2_mae": {
+    "carry_forward": 4.153399433427762,
+    "six_release_mean": 3.389801699716714,
+    "direct": 3.1348793955342336,
+    "two_stage": 3.2364032810979197,
+    "oracle": 3.1742317832496343
+  },
+  "paired_tests": [
+    {
+      "model": "two_stage",
+      "reference": "direct",
+      "mean_mae_difference": 0.10114444725857182,
+      "wins": 2,
+      "origins": 10,
+      "paired_t_p": 0.2469117128687459,
+      "sign_test_p": 0.109375
+    },
+    {
+      "model": "oracle",
+      "reference": "direct",
+      "mean_mae_difference": 0.03911583983235047,
+      "wins": 4,
+      "origins": 10,
+      "paired_t_p": 0.3285151554122679,
+      "sign_test_p": 0.75390625
+    },
+    {
+      "model": "two_stage",
+      "reference": "oracle",
+      "mean_mae_difference": 0.062028607426221335,
+      "wins": 1,
+      "origins": 10,
+      "paired_t_p": 0.19657295766382052,
+      "sign_test_p": 0.021484375
+    },
+    {
+      "model": "direct",
+      "reference": "six_release_mean",
+      "mean_mae_difference": -0.25483760328507843,
+      "wins": 10,
+      "origins": 10,
+      "paired_t_p": 0.0022995085438736115,
+      "sign_test_p": 0.001953125
+    }
+  ],
+  "overfitting_gap": {
+    "direct": {
+      "train_mae": 3.2953129919212456,
+      "test_mae": 3.1350421418524137,
+      "gap": -0.1602708500688319
+    },
+    "oracle": {
+      "train_mae": 3.2391379215138416,
+      "test_mae": 3.174157981684764,
+      "gap": -0.06497993982907779
+    },
+    "two_stage": {
+      "train_mae": 3.2063452423933554,
+      "test_mae": 3.236186589110985,
+      "gap": 0.029841346717629502
+    }
+  },
+  "direct_errors_within_2se": 0.8569405099150141
+}
