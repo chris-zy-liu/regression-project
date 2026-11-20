@@ -1,0 +1,13 @@
+{
+  "snapshot": "2026-10-30",
+  "selected": "batch_recent_504",
+  "forecast_start": "2026-10-31",
+  "forecast_end": "2026-12-11",
+  "expected_count": 18.052623462311836,
+  "interval90": [
+    10,
+    27
+  ],
+  "interval_type": "conditional on fitted rate and empirical sizes",
+  "evaluation": "retrospective fixed catalog, six previously examined windows"
+}
