@@ -1,15 +1,16 @@
 {
   "stage1": {
-    "issue_dates": 23,
-    "mean_actual_count_24d": 6.173913043478261,
-    "poisson_mae": 2.5763210482908017,
-    "carry_forward_last24_mae": 3.608695652173913,
-    "historical_average_rate_mae": 2.8261291718841757,
-    "poisson_noise_floor_mae": 1.8186150604125775,
-    "poisson_bias": -0.9737839477509717,
-    "skill_vs_carry_forward": 0.2860797095097779,
-    "skill_vs_historical_average": 0.08839232335117486,
-    "coverage_90": 0.782608695652174,
+    "issue_dates": 22,
+    "mean_actual_count_24d": 6.2727272727272725,
+    "poisson_mae": 2.564595000544693,
+    "carry_forward_last24_mae": 3.5,
+    "historical_average_rate_mae": 2.9045555867262274,
+    "excluded_unfinished_windows": 1,
+    "batch_poisson_mae": 2.4392408632476683,
+    "poisson_bias": -1.14687840440807,
+    "skill_vs_carry_forward": 0.26725857127294483,
+    "skill_vs_historical_average": 0.1170439249760441,
+    "coverage_90": 0.7727272727272727,
     "pearson_dispersion_selected": 1.3665755072089265,
     "pearson_dispersion_linear": 1.5900288868104553,
     "rate_cv_42day_mae": {
@@ -22,72 +23,225 @@
   },
   "stage1_signal": {
     "distinct_values_per_issue_date": "one value shared by all 71 groups",
-    "corr_expected_count_with_time": 0.9453850814162499,
-    "corr_actual_count_with_time": 0.34865726157801524,
-    "corr_expected_with_actual": 0.12395480785322077,
-    "vif_expected_count_on_time": 9.412026219753661
+    "corr_expected_count_with_time": 0.9373262250257037,
+    "corr_actual_count_with_time": 0.43407740711202947,
+    "corr_expected_with_actual": 0.19556428551658805,
+    "vif_expected_count_on_time": 8.235906140879546
   },
   "stage2_mae": {
     "carry_forward": 4.153399433427762,
     "six_release_mean": 3.389801699716714,
-    "direct": 3.1348793955342336,
-    "two_stage": 3.2364032810979197,
+    "direct": 3.134879395534233,
+    "two_stage": 3.2364032810979184,
+    "two_stage_batch": 3.2158011745179547,
     "oracle": 3.1742317832496343
   },
   "paired_tests": [
     {
       "model": "two_stage",
       "reference": "direct",
-      "mean_mae_difference": 0.10114444725857182,
+      "mean_mae_difference": 0.10114444725856978,
       "wins": 2,
       "origins": 10,
-      "paired_t_p": 0.2469117128687459,
-      "sign_test_p": 0.109375
+      "block_length": 2,
+      "ci_low": 0.006779009510240726,
+      "ci_high": 0.26467276338651136
+    },
+    {
+      "model": "two_stage",
+      "reference": "direct",
+      "mean_mae_difference": 0.10114444725856978,
+      "wins": 2,
+      "origins": 10,
+      "block_length": 3,
+      "ci_low": 0.004088310316021282,
+      "ci_high": 0.26942706723596216
+    },
+    {
+      "model": "two_stage",
+      "reference": "direct",
+      "mean_mae_difference": 0.10114444725856978,
+      "wins": 2,
+      "origins": 10,
+      "block_length": 4,
+      "ci_low": 0.0036716037085879004,
+      "ci_high": 0.2663617736240095
+    },
+    {
+      "model": "two_stage_batch",
+      "reference": "direct",
+      "mean_mae_difference": 0.08064693953000583,
+      "wins": 3,
+      "origins": 10,
+      "block_length": 2,
+      "ci_low": 0.007382826137602965,
+      "ci_high": 0.20403438048027786
+    },
+    {
+      "model": "two_stage_batch",
+      "reference": "direct",
+      "mean_mae_difference": 0.08064693953000583,
+      "wins": 3,
+      "origins": 10,
+      "block_length": 3,
+      "ci_low": 0.0050905894837983915,
+      "ci_high": 0.20816846970756622
+    },
+    {
+      "model": "two_stage_batch",
+      "reference": "direct",
+      "mean_mae_difference": 0.08064693953000583,
+      "wins": 3,
+      "origins": 10,
+      "block_length": 4,
+      "ci_low": 0.0049803212947502114,
+      "ci_high": 0.20513423913292345
+    },
+    {
+      "model": "two_stage_batch",
+      "reference": "two_stage",
+      "mean_mae_difference": -0.020497507728563936,
+      "wins": 7,
+      "origins": 10,
+      "block_length": 2,
+      "ci_low": -0.061122821498793514,
+      "ci_high": 0.0012782560443929901
+    },
+    {
+      "model": "two_stage_batch",
+      "reference": "two_stage",
+      "mean_mae_difference": -0.020497507728563936,
+      "wins": 7,
+      "origins": 10,
+      "block_length": 3,
+      "ci_low": -0.06111548072527704,
+      "ci_high": 0.0012981195956546898
+    },
+    {
+      "model": "two_stage_batch",
+      "reference": "two_stage",
+      "mean_mae_difference": -0.020497507728563936,
+      "wins": 7,
+      "origins": 10,
+      "block_length": 4,
+      "ci_low": -0.06100987614943311,
+      "ci_high": 0.0013820127870098453
     },
     {
       "model": "oracle",
       "reference": "direct",
-      "mean_mae_difference": 0.03911583983235047,
+      "mean_mae_difference": 0.03911583983235056,
       "wins": 4,
       "origins": 10,
-      "paired_t_p": 0.3285151554122679,
-      "sign_test_p": 0.75390625
+      "block_length": 2,
+      "ci_low": -0.0037790414307194774,
+      "ci_high": 0.11633650889465123
+    },
+    {
+      "model": "oracle",
+      "reference": "direct",
+      "mean_mae_difference": 0.03911583983235056,
+      "wins": 4,
+      "origins": 10,
+      "block_length": 3,
+      "ci_low": -0.005009020744988035,
+      "ci_high": 0.11661311900150576
+    },
+    {
+      "model": "oracle",
+      "reference": "direct",
+      "mean_mae_difference": 0.03911583983235056,
+      "wins": 4,
+      "origins": 10,
+      "block_length": 4,
+      "ci_low": -0.004757105082035151,
+      "ci_high": 0.11420063345914624
     },
     {
       "model": "two_stage",
       "reference": "oracle",
-      "mean_mae_difference": 0.062028607426221335,
+      "mean_mae_difference": 0.062028607426219205,
       "wins": 1,
       "origins": 10,
-      "paired_t_p": 0.19657295766382052,
-      "sign_test_p": 0.021484375
+      "block_length": 2,
+      "ci_low": 0.005029521220555377,
+      "ci_high": 0.14961062318085538
+    },
+    {
+      "model": "two_stage",
+      "reference": "oracle",
+      "mean_mae_difference": 0.062028607426219205,
+      "wins": 1,
+      "origins": 10,
+      "block_length": 3,
+      "ci_low": 0.0034385109072568197,
+      "ci_high": 0.15264751767679455
+    },
+    {
+      "model": "two_stage",
+      "reference": "oracle",
+      "mean_mae_difference": 0.062028607426219205,
+      "wins": 1,
+      "origins": 10,
+      "block_length": 4,
+      "ci_low": 0.003613635204139998,
+      "ci_high": 0.14625703604056167
     },
     {
       "model": "direct",
       "reference": "six_release_mean",
-      "mean_mae_difference": -0.25483760328507843,
+      "mean_mae_difference": -0.2548376032850785,
       "wins": 10,
       "origins": 10,
-      "paired_t_p": 0.0022995085438736115,
-      "sign_test_p": 0.001953125
+      "block_length": 2,
+      "ci_low": -0.36591661883180593,
+      "ci_high": -0.15502761349508637
+    },
+    {
+      "model": "direct",
+      "reference": "six_release_mean",
+      "mean_mae_difference": -0.2548376032850785,
+      "wins": 10,
+      "origins": 10,
+      "block_length": 3,
+      "ci_low": -0.35240232236719404,
+      "ci_high": -0.16626099248563628
+    },
+    {
+      "model": "direct",
+      "reference": "six_release_mean",
+      "mean_mae_difference": -0.2548376032850785,
+      "wins": 10,
+      "origins": 10,
+      "block_length": 4,
+      "ci_low": -0.33406186914590813,
+      "ci_high": -0.17641204885915918
     }
   ],
   "overfitting_gap": {
     "direct": {
-      "train_mae": 3.2953129919212456,
-      "test_mae": 3.1350421418524137,
+      "train_mae": 3.295312991921245,
+      "test_mae": 3.1350421418524133,
       "gap": -0.1602708500688319
     },
     "oracle": {
-      "train_mae": 3.2391379215138416,
+      "train_mae": 3.2391379215138407,
       "test_mae": 3.174157981684764,
-      "gap": -0.06497993982907779
+      "gap": -0.0649799398290769
     },
     "two_stage": {
       "train_mae": 3.2063452423933554,
-      "test_mae": 3.236186589110985,
-      "gap": 0.029841346717629502
+      "test_mae": 3.236186589110983,
+      "gap": 0.029841346717627726
+    },
+    "two_stage_batch": {
+      "train_mae": 3.2062203955886552,
+      "test_mae": 3.2156890813824193,
+      "gap": 0.009468685793764031
     }
   },
-  "direct_errors_within_2se": 0.8569405099150141
+  "direct_errors_within_2se": 0.8569405099150141,
+  "evaluation": "Retrospective fixed catalog; ten previously examined adoption origins",
+  "interval_note": "Exploratory moving-block intervals; limited reliability with ten dates",
+  "batch_method": "Fixed weekday compound Poisson; pooled earlier provider-day batch sizes"
 }
